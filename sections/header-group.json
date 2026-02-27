@@ -17,14 +17,14 @@
         "announcement_mV7n8R": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "(+84) 12 34 5678",
             "link": ""
           }
         },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "78 Trung Kinh, Yen Hoa, Cau Giay, Hanoi",
             "link": ""
           }
         }
@@ -34,10 +34,10 @@
         "announcement-bar-0"
       ],
       "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
+        "auto_rotate": true,
+        "change_slides_speed": 10,
+        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0",
+        "show_line_separator": false,
         "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false
@@ -46,20 +46,23 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo_position": "middle-left",
+        "logo_position": "middle-center",
         "mobile_logo_position": "center",
         "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
+        "menu_type_desktop": "drawer",
+        "sticky_header_type": "none",
+        "uppercase": true,
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "enable_customer_avatar": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "enable_customer_avatar": false,
         "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 4,
+        "padding_bottom": 4,
+        "padding_top_desk": 2.5,
+        "padding_bottom_desk": 2.5
       }
     }
   },

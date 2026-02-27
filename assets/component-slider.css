@@ -341,7 +341,7 @@ slider-component.slider-component-full-width {
   border: none;
   cursor: pointer;
   width: 44px;
-  height: 44px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,7 +352,7 @@ slider-component.slider-component-full-width {
 }
 
 .slider-button .icon {
-  height: 0.6rem;
+  height: 0.8rem;
 }
 
 .slider-button[disabled] .icon {
