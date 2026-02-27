@@ -20,7 +20,6 @@
 2. **Install dependencies**: `npm install`
 3. **Connect to Shopify**: Configure `shopify.app.toml`
 4. **Start development**: `npm run dev`
-5. **Deploy**: `npm run deploy`
 
 ## Customization
 - Edit Liquid files in `sections/` and `snippets/`
