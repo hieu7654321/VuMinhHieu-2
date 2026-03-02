@@ -166,6 +166,38 @@
   </div>
 </div>
 
+{% javascript %}
+  document.addEventListener('DOMContentLoaded', function() {
+
+    const header = document.querySelector('header');
+    const headerHeight = header ? header.offsetHeight : 0;
+
+    document.querySelectorAll('.banner__buttons').forEach(button => {
+
+      button.addEventListener('click', function() {
+
+        const currentSection = button.closest('.shopify-section');
+        const nextSection = currentSection?.nextElementSibling;
+
+        if (!nextSection) return;
+
+        const targetPosition =
+          nextSection.getBoundingClientRect().top +
+          window.pageYOffset -
+          headerHeight;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+
+      });
+
+    });
+
+  });
+{% endjavascript %}
+
 {% schema %}
 {
   "name": "t:sections.image-banner.name",
