@@ -101,9 +101,9 @@
     "drawer_shadow_horizontal_offset": 0,
     "drawer_shadow_vertical_offset": 4,
     "drawer_shadow_blur": 5,
-    "badge_position": "bottom left",
-    "badge_corner_radius": 40,
-    "sale_badge_color_scheme": "scheme-4",
+    "badge_position": "top left",
+    "badge_corner_radius": 0,
+    "sale_badge_color_scheme": "scheme-1ebb9ba8-a41e-4759-b380-c93e83ee498f",
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "",
     "brand_description": "<p></p>",
@@ -120,7 +120,7 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
-    "currency_code_enabled": true,
+    "currency_code_enabled": false,
     "cart_type": "notification",
     "show_vendor": false,
     "show_cart_note": false,
@@ -206,6 +206,17 @@
           "button_label": "#ffffff",
           "secondary_button_label": "#ffffff",
           "shadow": "#ffffff"
+        }
+      },
+      "scheme-1ebb9ba8-a41e-4759-b380-c93e83ee498f": {
+        "settings": {
+          "background": "#a42003",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#a42003",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#a42003",
+          "shadow": "#a42003"
         }
       }
     }

@@ -26,14 +26,73 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: {{ section.settings.padding_top | times: 0.45 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.45 | round: 0 }}px;
+  }
+
+  .section-{{ section.id }}-align {
+    text-align: {{ section.settings.text_align_mobile }};
+  }
+
+  .section-{{ section.id }}-padd {
+    padding: 0 {{ section.settings.title_padding_mobile }}px;
+  }
+
+  .h_custom {
+    font-family: var(--font-heading-family);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 38.4px;
+    letter-spacing: 0;
+  }
+
+  .selling-color {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0;
+    background-color: {{section.settings.selling_background }};
+    padding: 0.5rem 1rem;
+    color: white;
+  }
+
+  .new-color {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0;
+    background-color: {{section.settings.new_background }};
+    padding: 0.5rem 0;
+    color: white;
+    max-width: 5rem;
   }
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    .section-{{ section.id }}-align {
+      text-align: {{ section.settings.text_align_desktop }};
+    }
+
+    .section-{{ section.id }}-padd {
+      padding: 0 5rem;
+    }
+
+    .h_custom {
+      font-family: var(--font-heading-family);
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 48px;
+      letter-spacing: 0;
+    }
+  }
+
+  @media screen and (min-width: 1500px) {
+    .section-{{ section.id }}-padd {
+      padding: 0 {{ section.settings.title_padding_desktop }}px;
     }
   }
 {%- endstyle -%}
@@ -72,9 +131,9 @@
     id="collection-{{ section.id }}"
     data-id="{{ section.id }}"
   >
-    <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
+    <div class="collection__title title-wrapper section-{{ section.id }}-padd title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
       {%- if section.settings.title != blank -%}
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <h2 class="title inline-richtext section-{{ section.id }}-align {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {{ section.settings.title }}
         </h2>
       {%- endif -%}
@@ -101,38 +160,162 @@
         aria-label="{{ 'general.slider.name' | t }}"
       >
         {% assign skip_card_product_styles = false %}
-
         {%- if section.settings.collection.products.size > 0 -%}
-          {% assign lazy_load = false %}
-          {% paginate section.settings.collection.products by section.settings.products_to_show %}
-            {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
-              {% if lazy_load == false and forloop.index > max_columns_to_show %}
-                {% assign lazy_load = true %}
-              {% endif %}
-              <li
-                id="Slide-{{ section.id }}-{{ forloop.index }}"
-                class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {% if settings.animations_reveal_on_scroll %}
-                  data-cascade
-                  style="--animation-order: {{ forloop.index }};"
+          {% if section.settings.enable_mixed_layout %}
+
+            {% assign products = section.settings.collection.products %}
+            {% assign lazy_load = false %}
+
+            {% for product in products limit: 6 %}
+                {% if lazy_load == false and forloop.index > max_columns_to_show %}
+                  {% assign lazy_load = true %}
                 {% endif %}
-              >
-                {% render 'card-product',
-                  card_product: product,
-                  media_aspect_ratio: section.settings.image_ratio,
-                  image_shape: section.settings.image_shape,
-                  lazy_load: lazy_load,
-                  show_secondary_image: section.settings.show_secondary_image,
-                  show_vendor: section.settings.show_vendor,
-                  show_rating: section.settings.show_rating,
-                  skip_styles: skip_card_product_styles,
-                  section_id: section.id,
-                  quick_add: section.settings.quick_add
-                %}
-              </li>
-              {%- assign skip_card_product_styles = true -%}
-            {%- endfor -%}
-          {% endpaginate %}
+
+              {% case forloop.index %}
+
+                {% when 1 %}
+                  <li class="grid__item">
+                    <div class="featured-mixed featured-mixed--wide">
+                      {% render 'card-product',
+                        card_product: product,
+                        media_aspect_ratio: 'adapt',
+                        image_shape: section.settings.image_shape,
+                        lazy_load: lazy_load,
+                        show_secondary_image: section.settings.show_secondary_image,
+                        show_vendor: section.settings.show_vendor,
+                        show_rating: section.settings.show_rating,
+                        skip_styles: skip_card_product_styles,
+                        section_id: section.id,
+                        quick_add: section.settings.quick_add
+                      %}
+                    </div>
+                  </li>
+
+                {% when 2 %}
+                  <li class="grid__item">
+                    <div class="portrait-stack">
+                      <div class="featured-mixed featured-mixed--tall">
+                          {% render 'card-product',
+                            card_product: product,
+                            media_aspect_ratio: 'portrait',
+                            image_shape: section.settings.image_shape,
+                            lazy_load: lazy_load,
+                            show_secondary_image: section.settings.show_secondary_image,
+                            show_vendor: section.settings.show_vendor,
+                            show_rating: section.settings.show_rating,
+                            skip_styles: skip_card_product_styles,
+                            section_id: section.id,
+                            quick_add: section.settings.quick_add
+                          %}
+                        </div>
+
+                {% when 3 %}
+                        <div class="featured-mixed featured-mixed--tall">
+                          {% render 'card-product',
+                            card_product: product,
+                            media_aspect_ratio: 'portrait',
+                            image_shape: section.settings.image_shape,
+                            lazy_load: lazy_load,
+                            show_secondary_image: section.settings.show_secondary_image,
+                            show_vendor: section.settings.show_vendor,
+                            show_rating: section.settings.show_rating,
+                            skip_styles: skip_card_product_styles,
+                            section_id: section.id,
+                            quick_add: section.settings.quick_add
+                          %}
+                        </div>
+                      </div>
+                  </li>
+
+                {% when 4 %}
+                  <li class="grid__item">
+                    <div class="portrait-stack">
+                      <div class="featured-mixed featured-mixed--tall">
+                          {% render 'card-product',
+                            card_product: product,
+                            media_aspect_ratio: 'portrait',
+                            image_shape: section.settings.image_shape,
+                            lazy_load: lazy_load,
+                            show_secondary_image: section.settings.show_secondary_image,
+                            show_vendor: section.settings.show_vendor,
+                            show_rating: section.settings.show_rating,
+                            skip_styles: skip_card_product_styles,
+                            section_id: section.id,
+                            quick_add: section.settings.quick_add
+                          %}
+                        </div>
+
+                {% when 5 %}
+                        <div class="featured-mixed featured-mixed--tall">
+                          {% render 'card-product',
+                            card_product: product,
+                            media_aspect_ratio: 'portrait',
+                            image_shape: section.settings.image_shape,
+                            lazy_load: lazy_load,
+                            show_secondary_image: section.settings.show_secondary_image,
+                            show_vendor: section.settings.show_vendor,
+                            show_rating: section.settings.show_rating,
+                            skip_styles: skip_card_product_styles,
+                            section_id: section.id,
+                            quick_add: section.settings.quick_add
+                          %}
+                        </div>
+                      </div>
+                  </li>
+
+                {% when 6 %}
+                  <li class="grid__item">
+                    <div class="featured-mixed featured-mixed--wide">
+                      {% render 'card-product',
+                        card_product: product,
+                        media_aspect_ratio: 'adapt',
+                        image_shape: section.settings.image_shape,
+                        lazy_load: lazy_load,
+                        show_secondary_image: section.settings.show_secondary_image,
+                        show_vendor: section.settings.show_vendor,
+                        show_rating: section.settings.show_rating,
+                        skip_styles: skip_card_product_styles,
+                        section_id: section.id,
+                        quick_add: section.settings.quick_add
+                      %}
+                    </div>
+                  </li>
+
+              {% endcase %}
+
+            {% endfor %}
+          {% else %}
+            {% assign lazy_load = false %}
+            {% paginate section.settings.collection.products by section.settings.products_to_show %}
+              {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+                {% if lazy_load == false and forloop.index > max_columns_to_show %}
+                  {% assign lazy_load = true %}
+                {% endif %}
+                <li
+                  id="Slide-{{ section.id }}-{{ forloop.index }}"
+                  class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {% if settings.animations_reveal_on_scroll %}
+                    data-cascade
+                    style="--animation-order: {{ forloop.index }};"
+                  {% endif %}
+                >
+                    {% render 'card-product',
+                      card_product: product,
+                      media_aspect_ratio: section.settings.image_ratio,
+                      image_shape: section.settings.image_shape,
+                      lazy_load: lazy_load,
+                      show_secondary_image: section.settings.show_secondary_image,
+                      show_vendor: section.settings.show_vendor,
+                      show_rating: section.settings.show_rating,
+                      skip_styles: skip_card_product_styles,
+                      section_id: section.id,
+                      quick_add: section.settings.quick_add
+                    %}
+                </li>
+                {%- assign skip_card_product_styles = true -%}
+              {%- endfor -%}
+            {% endpaginate %}
+          {% endif %}
         {%- else -%}
           {%- for i in (1..section.settings.columns_desktop) -%}
             <li
@@ -214,6 +397,14 @@
   </div>
 </div>
 
+{% style %}
+  .portrait-stack {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+{% endstyle %}
+
 {% schema %}
 {
   "name": "t:sections.featured-collection.name",
@@ -270,10 +461,86 @@
         {
           "value": "hxxl",
           "label": "t:sections.all.heading_size.options__5.label"
+        },
+        {
+          "value": "h_custom",
+          "label": "Our picks for you"
         }
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "range",
+      "id": "title_padding_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Title Padding Mobile",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "title_padding_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Title Padding Desktop",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "text_align_mobile",
+      "label": "Text Align Mobile",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align_desktop",
+      "label": "Text Align Desktop",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "selling_background",
+      "label": "First Tag Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "new_background",
+      "label": "Second Tag Color",
+      "default": "#054E4A"
     },
     {
       "type": "richtext",
@@ -493,6 +760,12 @@
       "id": "swipe_on_mobile",
       "default": false,
       "label": "t:sections.featured-collection.settings.swipe_on_mobile.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_mixed_layout",
+      "label": "Enable custom Products Layout",
+      "default": true
     },          
     {
       "type": "header",

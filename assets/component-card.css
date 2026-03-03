@@ -1,3 +1,13 @@
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('Poppins-Medium.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 .card-wrapper {
   color: inherit;
   height: 100%;
@@ -159,10 +169,10 @@
   text-align: var(--text-alignment);
   min-width: auto;
 }
-
+/* 
 .card__information-volume-pricing-note--button:hover {
   text-decoration: underline;
-}
+} */
 
 .card__information-volume-pricing-note--button + .global-settings-popup.quantity-popover__info {
   transform: initial;
@@ -289,6 +299,10 @@
   margin: 1.3rem;
 }
 
+.tags {
+  display: block;
+}
+
 .card__media .media img {
   height: 100%;
   object-fit: cover;
@@ -300,9 +314,22 @@
   height: 100%;
 }
 
+.card__type {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
 .card__heading {
+  font-family: 'Poppins', sans-serif;
   margin-top: 0;
   margin-bottom: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25.88px;
+  letter-spacing: 0;
 }
 
 .card__heading:last-child {
@@ -401,10 +428,10 @@
     transform: scale(1.03);
   }
 
-  .underline-links-hover:hover a {
+  /* .underline-links-hover:hover a {
     text-decoration: underline;
     text-underline-offset: 0.3rem;
-  }
+  } */
 }
 
 .card--standard.card--media .card__inner .card__information,
