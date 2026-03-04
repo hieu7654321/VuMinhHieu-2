@@ -1,0 +1,240 @@
+<section id="marquee-{{ section.id }}" class="marquee-section color-{{section.settings.color_scheme }}">
+  <div class="marquee__wrapper">
+    <div class="marquee__track">
+        <div class="marquee__content">
+          {% for block in section.blocks %}
+            <span class="marquee__item" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+            </span>
+
+            {% unless forloop.last %}
+                {% if section.settings.separator_image != blank %}
+                <img
+                    src="{{ section.settings.separator_image | image_url: width: 32 }}"
+                    alt=""
+                    class="marquee__separator"
+                    width="32"
+                    height="32"
+                >
+                {% endif %}
+            {% endunless %}
+          {% endfor %}
+        </div>
+        <div class="marquee__group-gap"></div>
+    </div>
+  </div>
+</section>
+
+{% style %}
+
+#marquee-{{ section.id }} {
+  overflow: hidden;
+  margin-top: {{ section.settings.margin_top_mobile }}px;
+  margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
+}
+
+#marquee-{{ section.id }} .marquee__wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+#marquee-{{ section.id }} .marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-{{ section.id }} {{ section.settings.speed }}s linear infinite;
+}
+
+#marquee-{{ section.id }} .marquee__content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  opacity: {{ section.settings.opacity }};
+}
+
+#marquee-{{ section.id }} .marquee__item {
+  font-family: var(--font-heading-family);
+  font-size: {{ section.settings.font_size_mobile }}px;
+  line-height: {{ section.settings.line_height_mobile }}px;
+  letter-spacing: 0.1px;
+  margin-right: 4.8rem;
+}
+
+#marquee-{{ section.id }} .marquee__separator {
+  height: {{ section.settings.separator_height }}px;
+  margin-right: 4.5rem;
+}
+
+#marquee-{{ section.id }} .marquee__group-gap {
+  width: 6rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 990px) {
+
+  #marquee-{{ section.id }} {
+    margin-top: {{ section.settings.margin_top_desktop }}px;
+    margin-bottom: {{ section.settings.margin_bottom_desktop }}px;
+  }
+
+  #marquee-{{ section.id }} .marquee__item {
+    font-size: {{ section.settings.font_size_desktop }}px;
+    line-height: {{ section.settings.line_height_desktop }}px;
+  }
+}
+
+@keyframes marquee-scroll-{{ section.id }} {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Promotion Carousel",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "separator_image",
+      "label": "Separator Image"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "separator_height",
+      "label": "Separator Height",
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Scroll Speed (seconds)",
+      "min": 5,
+      "max": 60,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+        "id": "font_size_mobile",
+        "label": "Font Size (Mobile)",
+        "min": 14,
+        "max": 80,
+        "step": 2,
+        "default": 28
+    },
+    {
+      "type": "range",
+      "id": "line_height_mobile",
+      "label": "Line Height (Mobile)",
+      "min": 16,
+      "max": 100,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "font_size_desktop",
+      "label": "Font Size (Desktop)",
+      "min": 20,
+      "max": 140,
+      "step": 2,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "line_height_desktop",
+      "label": "Line Height (Desktop)",
+      "min": 24,
+      "max": 160,
+      "step": 2,
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "opacity",
+      "label": "Text Opacity",
+      "min": 0.1,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.2
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_top_mobile",
+      "label": "Margin Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_mobile",
+      "label": "Margin Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "margin_top_desktop",
+      "label": "Margin Top (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40
+    },
+    {
+      "type": "range",  
+      "id": "margin_bottom_desktop",
+      "label": "Margin Bottom (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_item",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "FIND INSPIRATION"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promotion Carousel"
+    }
+  ]
+}
+{% endschema %}
