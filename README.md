@@ -16,11 +16,11 @@
 
 ## Getting Started
 
-1. **Clone or download** this theme
+1. **Clone or download**: `git clone https://github.com/hieu7654321/VuMinhHieu-2.git`
 2. **Install dependencies**: `npm install`
 3. **Connect to Shopify**: Configure `shopify.app.toml`
 4. **Start development**: `npm run dev`
-5. **Deploy**: `npm run deploy`
+5. **Pull change from editor**: `npm run pull`
 
 ## Customization
 - Edit Liquid files in `sections/` and `snippets/`

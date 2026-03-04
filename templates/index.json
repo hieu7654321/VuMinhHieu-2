@@ -15,15 +15,22 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
+            "heading": "EMBRACE VISION",
             "heading_size": "h0"
           }
         },
-        "button": {
+        "text_mMJUHt": {
+          "type": "text",
+          "settings": {
+            "text": "Clever products for every corner",
+            "text_style": "body"
+          }
+        },
+        "buttons_a8rbFi": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_label_1": "EXPLORE NOW",
+            "button_link_1": "",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -33,52 +40,266 @@
       },
       "block_order": [
         "heading",
-        "button"
+        "text_mMJUHt",
+        "buttons_a8rbFi"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
+        "image": "shopify://shop_images/hero.png",
+        "image_overlay_opacity": 0,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
         "image_behavior": "none",
+        "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0",
         "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
         "show_text_below": false
       }
     },
     "featured_collection": {
       "type": "featured-collection",
+      "blocks": {
+        "collection_tab_jh8ja4": {
+          "type": "collection_tab",
+          "name": "SEATING",
+          "settings": {
+            "collection_child": "frontpage",
+            "tab_label": "SEATING"
+          }
+        },
+        "collection_tab_7nqKzB": {
+          "type": "collection_tab",
+          "name": "TABLE",
+          "settings": {
+            "collection_child": "dining-table",
+            "tab_label": "TABLE"
+          }
+        },
+        "collection_tab_DpBydC": {
+          "type": "collection_tab",
+          "name": "STORAGE",
+          "settings": {
+            "collection_child": "storage",
+            "tab_label": "STORAGE"
+          }
+        },
+        "collection_tab_GihVNx": {
+          "type": "collection_tab",
+          "name": "LIGHTING",
+          "settings": {
+            "collection_child": "lighting",
+            "tab_label": "LIGHTING"
+          }
+        },
+        "collection_tab_qr3TyV": {
+          "type": "collection_tab",
+          "name": "DECOR",
+          "settings": {
+            "collection_child": "decor",
+            "tab_label": "DECOR"
+          }
+        }
+      },
+      "block_order": [
+        "collection_tab_jh8ja4",
+        "collection_tab_7nqKzB",
+        "collection_tab_DpBydC",
+        "collection_tab_GihVNx",
+        "collection_tab_qr3TyV"
+      ],
+      "name": "Our picks for you",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
+        "collection": "frontpage",
+        "show_product_grid": true,
+        "products_to_show": 6,
+        "title": "Our picks for you",
+        "heading_size": "h_custom",
+        "title_padding_mobile": 15,
+        "title_padding_desktop": 0,
+        "text_align_mobile": "center",
+        "text_align_desktop": "left",
+        "selling_background": "#000000",
+        "new_background": "#054e4a",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
+        "columns_desktop": 2,
         "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "enable_mixed_layout": true,
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "padding_multiplier": 45,
+        "margin_bottom_custom": 40
+      }
+    },
+    "featured_collection_WffEhd": {
+      "type": "featured-collection",
+      "name": "Discover unique items",
+      "settings": {
+        "collection": "unique",
+        "show_product_grid": false,
+        "products_to_show": 16,
+        "title": "Discover unique items",
+        "heading_size": "h_custom",
+        "title_padding_mobile": 15,
+        "title_padding_desktop": 0,
+        "text_align_mobile": "center",
+        "text_align_desktop": "center",
+        "selling_background": "#000000",
+        "new_background": "#054e4a",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
         "columns_mobile": "2",
-        "padding_top": 44,
+        "swipe_on_mobile": true,
+        "enable_mixed_layout": false,
+        "padding_top": 36,
+        "padding_bottom": 50,
+        "padding_multiplier": 83,
+        "margin_bottom_custom": 50
+      }
+    },
+    "contact_form_9CggVF": {
+      "type": "contact-form",
+      "name": "t:sections.contact-form.presets.name",
+      "settings": {
+        "heading": "Contact form",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "collapsible_content_tHV8Lq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_VEhMny": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_mxtkrG": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_MeQRx6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_whdp6K": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_VEhMny",
+        "collapsible_row_mxtkrG",
+        "collapsible_row_MeQRx6",
+        "collapsible_row_whdp6K"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "caption": "",
+        "heading": "Collapsible content",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_CGnqVe": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_Hx4p6G": {
+          "type": "heading",
+          "settings": {
+            "heading": "Elevate Your Home",
+            "heading_size": "h0"
+          }
+        },
+        "text_ki9PdL": {
+          "type": "text",
+          "settings": {
+            "text": "Clever products for every corner",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Hx4p6G",
+        "text_ki9PdL"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Elevate-your-home.png",
+        "image_overlay_opacity": 50,
+        "image_height": "small",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "featured_collection_WffEhd",
+    "contact_form_9CggVF",
+    "collapsible_content_tHV8Lq",
+    "image_banner_CGnqVe"
   ]
 }

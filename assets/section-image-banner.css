@@ -6,8 +6,26 @@
   isolation: isolate;
 }
 
+.banner__media > img {
+  scale: 2;
+  object-position: 65% center;
+}
+
 .banner__box {
   text-align: center;
+  color: rgba(var(--color-foreground));
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.button--secondary::before {
+  cursor: pointer;
+}
+
+.button--secondary::after {
+  top: auto;
+  cursor: pointer;
 }
 
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
@@ -25,7 +43,11 @@
   }
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 750px) {  
+  .banner__box {
+    gap: 2.4rem;
+  }
+
   .banner--content-align-right .banner__box {
     text-align: right;
   }
@@ -37,7 +59,7 @@
   .banner--content-align-left.banner--desktop-transparent .banner__box,
   .banner--content-align-right.banner--desktop-transparent .banner__box,
   .banner--medium.banner--desktop-transparent .banner__box {
-    max-width: 68rem;
+    max-width: 35.2rem;
   }
 }
 
@@ -76,13 +98,18 @@
   }
 
   .banner--large:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
-    min-height: 39rem;
+    min-height: 60rem;
   }
 }
 
 @media screen and (min-width: 750px) {
   .banner {
     flex-direction: row;
+  }
+
+  .banner__media > img {
+    scale: 1.1;
+    object-position: 50% center;
   }
 
   .banner--small:not(.banner--adapt) {
@@ -94,7 +121,7 @@
   }
 
   .banner--large:not(.banner--adapt) {
-    min-height: 72rem;
+    min-height: clamp(60rem, 58vw, 108rem);
   }
 
   .banner__content.banner__content--top-left {
@@ -339,12 +366,12 @@
 }
 
 .banner__box {
-  padding: 4rem 1.5rem;
+  padding: 4rem 1.9rem;
   position: relative;
   height: fit-content;
   align-items: center;
   text-align: center;
-  width: 100%;
+  width: 35.2rem;
   word-wrap: break-word;
   z-index: 1;
 }
@@ -361,7 +388,7 @@
   .banner--desktop-transparent .banner__box {
     padding: 4rem 0;
     background: transparent;
-    max-width: 89rem;
+    max-width: 35.2rem;
     border: none;
     border-radius: 0;
     box-shadow: none;
@@ -396,18 +423,22 @@
 }
 
 .banner__box > * + .banner__text {
-  margin-top: 1.5rem;
+  /* margin-top: 1.5rem; */
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0;
 }
 
-@media screen and (min-width: 750px) {
+/* @media screen and (min-width: 750px) {
   .banner__box > * + .banner__text {
     margin-top: 2rem;
   }
-}
+} */
 
-.banner__box > * + * {
+/* .banner__box > * + * {
   margin-top: 1rem;
-}
+} */
 
 .banner__box > *:first-child {
   margin-top: 0;
@@ -421,25 +452,33 @@
 
 @media screen and (min-width: 750px) {
   .banner__box {
-    width: auto;
+    /* width: auto;
     max-width: 71rem;
-    min-width: 45rem;
+    min-width: 45rem; */
+    margin-top: 3.2rem;
+    width: 35.2rem;
+  }
+
+  .banner__box > * + .banner__text {
+    margin-inline: auto;
   }
 }
-
+/* 
 @media screen and (min-width: 1400px) {
   .banner__box {
     max-width: 90rem;
   }
-}
+} */
 
 .banner__heading {
   margin-bottom: 0;
+  font-size: 5.6rem;
+  line-height: 76.8px;
 }
-
+/* 
 .banner__box .banner__heading + * {
   margin-top: 1rem;
-}
+} */
 
 .banner__buttons {
   display: inline-flex;
@@ -447,6 +486,18 @@
   gap: 1rem;
   max-width: 45rem;
   word-break: break-word;
+  top: auto
+}
+
+.banner__buttons > a {
+  padding-top: 1.2rem;
+  padding-inline: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  min-height: 3.8rem;
+  cursor: pointer !important;
 }
 
 @media screen and (max-width: 749px) {
@@ -461,6 +512,11 @@
 }
 
 @media screen and (min-width: 750px) {
+  .banner__heading {
+    font-size: clamp(5.6rem, 7.5vw, 7.2rem);
+    line-height: 9rem;
+  }
+
   .banner--content-align-center .banner__buttons--multiple > * {
     flex-grow: 1;
     min-width: 22rem;
@@ -469,11 +525,15 @@
   .banner--content-align-right .banner__buttons--multiple {
     justify-content: flex-end;
   }
+
+  .banner__buttons > a {
+    padding-top: 0rem;
+  }
 }
 
-.banner__box > * + .banner__buttons {
+/* .banner__box > * + .banner__buttons {
   margin-top: 2rem;
-}
+} */
 
 @media screen and (max-width: 749px) {
   .banner:not(.slideshow) .rte a,

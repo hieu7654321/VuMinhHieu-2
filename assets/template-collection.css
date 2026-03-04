@@ -68,11 +68,19 @@
 }
 
 .collection__title.title-wrapper {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 990px) {
+  .collection__title.title-wrapper {
+    flex-direction: row;
+    max-height: 4.8rem;
+    margin-bottom: 4rem;
+  }
 }
 
 .collection__title .title:not(:only-child) {
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 @media screen and (min-width: 990px) {
@@ -96,4 +104,63 @@
 
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
+}
+
+.portrait-stack {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.collection-tabs {
+  display: flex;
+  gap: 2.5rem;
+  margin: 3.5rem 0 2rem 1.5rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+}
+
+.collection-tab-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-inline: 0;
+  padding-bottom: 2px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.collection-tab-button.is-active {
+  font-family: 'Poppins', serif;
+  font-weight: 500;
+  border-bottom: 2px solid currentColor;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 490px) {
+  .collection-tabs {
+    justify-content: center;
+  }
+}
+
+
+@media screen and (min-width: 990px) {
+  .collection-tabs {
+    margin: auto 0 auto auto;
+    gap: 3.6rem;
+  }
+
+  .flex {
+    display: flex;
+  }
 }
