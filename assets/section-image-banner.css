@@ -19,8 +19,13 @@
   gap: 1.2rem;
 }
 
+.button--secondary::before {
+  cursor: pointer;
+}
+
 .button--secondary::after {
   top: auto;
+  cursor: pointer;
 }
 
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
@@ -116,7 +121,7 @@
   }
 
   .banner--large:not(.banner--adapt) {
-    min-height: clamp(60rem, 50vw, 108rem);
+    min-height: clamp(60rem, 58vw, 108rem);
   }
 
   .banner__content.banner__content--top-left {
@@ -492,6 +497,7 @@
   line-height: 24px;
   letter-spacing: 0;
   min-height: 3.8rem;
+  cursor: pointer !important;
 }
 
 @media screen and (max-width: 749px) {
