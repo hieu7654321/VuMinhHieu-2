@@ -32,12 +32,12 @@
   {%- liquid
     assign ratio = 1
     if card_product.featured_media and media_aspect_ratio == 'portrait'
-      assign ratio = 0.74
+      assign ratio = 0.753
     elsif card_product.featured_media and media_aspect_ratio == 'adapt'
-      assign ratio = card_product.featured_media.aspect_ratio
+      assign ratio = 1.53
     endif
     if ratio == 0 or ratio == null
-      assign ratio = 1.52
+      assign ratio = 1.534
     endif
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
@@ -139,7 +139,7 @@
                 id="Badge-{{ section_id }}-{{ card_product.id }}"
                 class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
               >
-                {{- card_product.metafields.automatic.discounts | metafield_text -}}%
+                -{{- card_product.metafields.automatic.discounts | metafield_text -}}%
               </span>
             {%- endif -%}
             {%- if has_selling -%}
@@ -591,7 +591,7 @@
               id="Badge-{{ section_id }}-{{ card_product.id }}"
               class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
             >
-              {{- card_product.metafields.automatic.discounts | metafield_text -}}%
+              -{{- card_product.metafields.automatic.discounts | metafield_text -}}%
             </span>
           {%- endif -%}
           {%- if has_selling -%}

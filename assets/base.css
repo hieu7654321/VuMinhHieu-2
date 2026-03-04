@@ -8,6 +8,15 @@
   --focused-base-box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('Poppins-Medium.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 .product-card-wrapper .card,
 .contains-card--product {
   --border-radius: var(--product-card-corner-radius);
@@ -819,7 +828,7 @@ summary::-webkit-details-marker {
 @media screen and (min-width: 990px) {
   .title,
   .title-wrapper-with-link {
-    margin: 5rem 0 3rem;
+    margin: 5rem 0 3.5rem;
   }
 
   .title--primary {
@@ -1073,7 +1082,8 @@ summary::-webkit-details-marker {
 
   .slider--tablet.grid--peek.grid--2-col-tablet-down .grid__item,
   .grid--peek .grid__item {
-    width: calc(50% - var(--grid-mobile-horizontal-spacing) - 3rem);
+    width: calc(150% - var(--grid-mobile-horizontal-spacing) - 3rem);
+    max-width: clamp(265px, 50vw, 345px);
   }
 
   .slider--tablet.grid--peek.grid--1-col-tablet-down .grid__item,
@@ -2935,7 +2945,7 @@ details-disclosure > details {
   font-size: 1.4rem;
   letter-spacing: 0;
   line-height: 18px;
-  padding: 0.4rem 1.2rem;
+  padding: 0.3rem 1rem;
   font-weight: 700;
   text-align: center;
   background-color: rgb(var(--color-badge-background));
