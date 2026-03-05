@@ -228,6 +228,58 @@
         "margin_bottom_desktop": 40
       }
     },
+    "sale_block_gdEfYh": {
+      "type": "sale-block",
+      "blocks": {
+        "image_block_GRRzAm": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bundle_and_save.jpg"
+          }
+        },
+        "text_block_Hr98ad": {
+          "type": "text_block",
+          "settings": {
+            "label": "SEASON SALE COLLECTIONS",
+            "heading": "SALE 30% OFF",
+            "subtext": "Save extra on our sale collection\n*Runs until 14:00pm PST",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "image_block_6nDCC6": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Renovate_your_home.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_block_GRRzAm",
+        "text_block_Hr98ad",
+        "image_block_6nDCC6"
+      ],
+      "name": "Sale Block",
+      "settings": {
+        "color_scheme": "scheme-ba4987b0-e986-4c74-8f30-6849249c48ee",
+        "margin_top_mobile": 56,
+        "margin_bottom_mobile": 40,
+        "margin_top_desktop": 80,
+        "margin_bottom_desktop": 80,
+        "gap_mobile": 24,
+        "gap_desktop": 32,
+        "label_size_mobile": 16,
+        "label_size_desktop": 16,
+        "heading_size_mobile": 46,
+        "heading_line_height_mobile": 64,
+        "heading_size_desktop": 56,
+        "heading_line_height_desktop": 80,
+        "subtext_size_mobile": 14,
+        "subtext_size_desktop": 14,
+        "text_background": "#6e331a",
+        "text_color": "#ffffff"
+      }
+    },
     "contact_form_9CggVF": {
       "type": "contact-form",
       "name": "t:sections.contact-form.presets.name",
@@ -343,6 +395,7 @@
     "featured_collection",
     "featured_collection_WffEhd",
     "promotion_carousel_gRNAjb",
+    "sale_block_gdEfYh",
     "contact_form_9CggVF",
     "collapsible_content_tHV8Lq",
     "image_banner_CGnqVe"
