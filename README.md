@@ -2,7 +2,7 @@
 # Shopify Theme Development - Dawn-Based Theme
 
 ## Orangy
-Đây là 1 project với mục đích thực hành tạo 1 trang website dựa theo yêu cầu và design figma có sẵn trên nền tảng shopify. Project được dựa theo figma để làm theo tỉ lệ gần với design figma nhất có thể
+Đây là 1 project với mục đích tự học tập và thực hành tạo 1 trang website dựa theo yêu cầu và design figma có sẵn trên nền tảng shopify. Project được tạo ra với mục đích cải thiện kỹ năng thao tác với Framework Shopify và không được sử dụng với mục đích thương mại. Project được dựa theo figma để làm theo tỉ lệ gần với design figma nhất có thể
 
 ## Project Structure
 ```

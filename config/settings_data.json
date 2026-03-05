@@ -35,7 +35,7 @@
     "variant_pills_shadow_vertical_offset": 4,
     "variant_pills_shadow_blur": 5,
     "inputs_border_thickness": 1,
-    "inputs_border_opacity": 55,
+    "inputs_border_opacity": 10,
     "inputs_radius": 0,
     "inputs_shadow_opacity": 0,
     "inputs_shadow_horizontal_offset": 0,
@@ -108,15 +108,15 @@
     "brand_headline": "",
     "brand_description": "<p></p>",
     "brand_image_width": 100,
-    "social_facebook_link": "",
-    "social_instagram_link": "",
-    "social_youtube_link": "",
-    "social_tiktok_link": "",
-    "social_twitter_link": "",
+    "social_facebook_link": "https://facebook.com/ugmonk",
+    "social_instagram_link": "https://instagram.com/ugmonk",
+    "social_youtube_link": "https://twitter.com/ugmonk",
+    "social_tiktok_link": "https://twitter.com/ugmonk",
+    "social_twitter_link": "https://twitter.com/ugmonk",
     "social_snapchat_link": "",
     "social_pinterest_link": "",
     "social_tumblr_link": "",
-    "social_vimeo_link": "",
+    "social_vimeo_link": "https://twitter.com/ugmonk",
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
@@ -228,6 +228,17 @@
           "button_label": "#ffffff",
           "secondary_button_label": "#000000",
           "shadow": "#000000"
+        }
+      },
+      "scheme-8bf5047a-1bd2-4b8e-98f9-37949ebc40d3": {
+        "settings": {
+          "background": "#f6f3ee",
+          "background_gradient": "",
+          "text": "#000000",
+          "button": "#000000",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#ffffff"
         }
       }
     }
