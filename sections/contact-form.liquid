@@ -2,8 +2,14 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: {{ section.settings.padding_top | times: 0.45 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 1.1 | round: 0 }}px;
+  }
+
+  .contact__typography {
+    text-align: {{ section.settings.heading_alignment }};
+    max-width: clamp(36rem, 41vw, 40.9rem);
+    margin-inline: auto;
   }
 
   @media screen and (min-width: 750px) {
@@ -15,9 +21,9 @@
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
+  <div class="contact page-width section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
-      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} contact__typography">
         {{ section.settings.heading }}
       </h2>
     {%- else -%}
@@ -53,6 +59,7 @@
       {%- endif -%}
       <div class="contact__fields">
         <div class="field">
+          <label class="field__label" for="ContactForm-name">{{- 'templates.contact.form.name' | t -}}<span aria-hidden="true"> *</span></label>
           <input
             class="field__input"
             autocomplete="name"
@@ -60,11 +67,15 @@
             id="ContactForm-name"
             name="contact[{{ 'templates.contact.form.name' | t }}]"
             value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+            aria-required="true"
             placeholder="{{ 'templates.contact.form.name' | t }}"
           >
-          <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
         </div>
         <div class="field field--with-error">
+          <label class="field__label" for="ContactForm-email">
+            {{- 'templates.contact.form.email' | t }}
+            <span aria-hidden="true">*</span></label
+          >
           <input
             autocomplete="email"
             type="email"
@@ -81,10 +92,6 @@
             {% endif %}
             placeholder="{{ 'templates.contact.form.email' | t }}"
           >
-          <label class="field__label" for="ContactForm-email">
-            {{- 'templates.contact.form.email' | t }}
-            <span aria-hidden="true">*</span></label
-          >
           {%- if form.errors contains 'email' -%}
             <small class="contact__field-error" id="ContactForm-email-error">
               <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
@@ -99,38 +106,53 @@
           {%- endif -%}
         </div>
       </div>
-      <div class="field">
-        <input
-          type="tel"
-          id="ContactForm-phone"
-          class="field__input"
-          autocomplete="tel"
-          name="contact[{{ 'templates.contact.form.phone' | t }}]"
-          pattern="[0-9\-]*"
-          value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-          placeholder="{{ 'templates.contact.form.phone' | t }}"
-        >
-        <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+      <div class="contact__fields">
+        <div class="field">
+          <label class="field__label" for="ContactForm-phone">{{- 'templates.contact.form.phone' | t -}}</label>
+          <input
+            type="tel"
+            id="ContactForm-phone"
+            class="field__input"
+            autocomplete="tel"
+            name="contact[{{ 'templates.contact.form.phone' | t }}]"
+            pattern="[0-9\-]*"
+            value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+            aria-required="true"
+            placeholder="{{ 'templates.contact.form.phone' | t }}"
+          >
+        </div>
+        <div class="field">
+            <label class="field__label" for="ContactForm-address">Address</label>
+            <input
+            type="text"
+            id="ContactForm-address"
+            class="field__input"
+            autocomplete="address-level1"
+            name="contact[address]"
+            placeholder="Address"
+          >
+        </div>
       </div>
       <div class="field">
+        <label class="form__label field__label" for="ContactForm-body">
+          {{- 'templates.contact.form.comment' | t -}}
+        </label>
         <textarea
           rows="10"
           id="ContactForm-body"
           class="text-area field__input"
           name="contact[{{ 'templates.contact.form.comment' | t }}]"
-          placeholder="{{ 'templates.contact.form.comment' | t }}"
+          placeholder="{{ section.settings.your_message_placeholder }}"
         >
           {{- form.body -}}
         </textarea>
-        <label class="form__label field__label" for="ContactForm-body">
-          {{- 'templates.contact.form.comment' | t -}}
-        </label>
       </div>
       <div class="contact__button">
         <button type="submit" class="button">
           {{ 'templates.contact.form.send' | t }}
         </button>
       </div>
+      <div class="contact-us__required">* Required</div>
     {%- endform -%}
   </div>
 </div>
@@ -149,6 +171,32 @@
       "id": "heading",
       "default": "t:sections.contact-form.settings.title.default",
       "label": "t:sections.contact-form.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "t:sections.collapsible_content.settings.heading_alignment.label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__3.label"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "text",
+      "id": "your_message_placeholder",
+      "label": "Message Placeholder",
+      "default": "Example: I want to buy 6 chairs and a table brand Oda ottoman..."
     },
     {
       "type": "select",
@@ -173,6 +221,10 @@
         {
           "value": "hxxl",
           "label": "t:sections.all.heading_size.options__5.label"
+        },
+        {
+          "value": "h_custom",
+          "label": "Custom Heading"
         }
       ],
       "default": "h1",

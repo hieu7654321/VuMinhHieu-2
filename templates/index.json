@@ -43,6 +43,7 @@
         "text_mMJUHt",
         "buttons_a8rbFi"
       ],
+      "name": "Hero Banner",
       "settings": {
         "image": "shopify://shop_images/hero.png",
         "image_overlay_opacity": 0,
@@ -263,9 +264,9 @@
       "settings": {
         "color_scheme": "scheme-ba4987b0-e986-4c74-8f30-6849249c48ee",
         "margin_top_mobile": 56,
-        "margin_bottom_mobile": 40,
-        "margin_top_desktop": 80,
-        "margin_bottom_desktop": 80,
+        "margin_bottom_mobile": 52,
+        "margin_top_desktop": 100,
+        "margin_bottom_desktop": 100,
         "gap_mobile": 24,
         "gap_desktop": 32,
         "label_size_mobile": 16,
@@ -284,54 +285,71 @@
       "type": "contact-form",
       "name": "t:sections.contact-form.presets.name",
       "settings": {
-        "heading": "Contact form",
-        "heading_size": "h1",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "Contact us to order and receive purchase advice",
+        "heading_alignment": "center",
+        "your_message_placeholder": "Example: I want to buy 6 chairs and a table brand Oda ottoman...",
+        "heading_size": "h_custom",
+        "color_scheme": "scheme-8bf5047a-1bd2-4b8e-98f9-37949ebc40d3",
+        "padding_top": 100,
+        "padding_bottom": 56
       }
     },
     "collapsible_content_tHV8Lq": {
       "type": "collapsible-content",
       "blocks": {
+        "collapsible_row_FJJpkY": {
+          "type": "collapsible_row",
+          "name": "How long does shipping take?",
+          "settings": {
+            "heading": "How long does shipping take?",
+            "icon": "none",
+            "row_content": "<p>Your sales managers will go into the field feeling energized, excited, and inspired. We are a full service business development group – we build strategies and systems.</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_VEhMny": {
           "type": "collapsible_row",
+          "name": "Does my piece come in any packaging?",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "Does my piece come in any packaging?",
+            "icon": "none",
+            "row_content": "<p>Yes, all our products come in protective and aesthetically pleasing packaging to ensure they arrive in perfect condition. Each product is securely wrapped, and we use eco-friendly materials whenever possible. Additionally, many of our products come in recyclable containers to support sustainability.</p>",
             "page": ""
           }
         },
         "collapsible_row_mxtkrG": {
           "type": "collapsible_row",
+          "name": "Do you ship internationally?",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "Do you ship internationally?",
+            "icon": "none",
+            "row_content": "<p>Yes, we do ship internationally! We offer worldwide shipping to ensure customers around the globe can enjoy our products. Please note that shipping times and costs may vary depending on the destination country. International customers may also be subject to customs fees or import duties imposed by their country's customs authorities.</p>",
             "page": ""
           }
         },
         "collapsible_row_MeQRx6": {
           "type": "collapsible_row",
+          "name": "What payment methods do you accept?",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "What payment methods do you accept?",
+            "icon": "none",
+            "row_content": "<p>We accept a variety of payment methods to make your shopping experience convenient. These include credit cards (Visa, Mastercard, American Express), PayPal, and, in some regions, alternative payment methods such as Apple Pay or Google Pay. Rest assured, your payment information is secure and protected during the checkout process.</p>",
             "page": ""
           }
         },
         "collapsible_row_whdp6K": {
           "type": "collapsible_row",
+          "name": "What should I do if my order is not placed?",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "What should I do if my order is not placed?",
+            "icon": "none",
+            "row_content": "<p>We’re sorry to hear that you’re unable to place an order. Please contact Customer Service and we will work on resolving the issue as quickly as possible.</p>",
             "page": ""
           }
         }
       },
       "block_order": [
+        "collapsible_row_FJJpkY",
         "collapsible_row_VEhMny",
         "collapsible_row_mxtkrG",
         "collapsible_row_MeQRx6",
@@ -340,13 +358,13 @@
       "name": "FAQs",
       "settings": {
         "caption": "",
-        "heading": "Collapsible content",
-        "heading_size": "h1",
+        "heading": "Discover more in our FAQs",
+        "heading_size": "h_custom",
         "heading_alignment": "center",
         "layout": "none",
         "container_color_scheme": "",
         "color_scheme": "",
-        "open_first_collapsible_row": false,
+        "open_first_collapsible_row": true,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
         "padding_top": 36,
