@@ -294,6 +294,75 @@
         "padding_bottom": 56
       }
     },
+    "inspiration_image_qHzDpe": {
+      "type": "inspiration-image",
+      "blocks": {
+        "item_3kghCa": {
+          "type": "item",
+          "name": "Showroom",
+          "settings": {
+            "image": "shopify://shop_images/Showroom.png",
+            "aspect": "portrait",
+            "title": "Showroom",
+            "text": "Experience design for living at our flagship showroom located in Boston’s South End."
+          }
+        },
+        "item_xWPM9y": {
+          "type": "item",
+          "name": "Interior work",
+          "settings": {
+            "image": "shopify://shop_images/Interior_work.png",
+            "aspect": "landscape",
+            "title": "Interior work",
+            "text": "Crafting spaces through meticulous planning, material selection, and creative execution, enhancing aesthetics and functionality."
+          }
+        },
+        "item_nGPk8y": {
+          "type": "item",
+          "name": "Authentic design",
+          "settings": {
+            "image": "shopify://shop_images/Authentic_Design.jpg",
+            "aspect": "portrait",
+            "title": "Authentic design",
+            "text": "We only carry designs we believe in ethically and aesthetically – original, authentic pieces that are made to last."
+          }
+        },
+        "item_N9xA8L": {
+          "type": "item",
+          "name": "Custom additions",
+          "settings": {
+            "image": "shopify://shop_images/Custom_additions.png",
+            "aspect": "landscape",
+            "title": "Custom additions",
+            "text": "Tailoring unique elements to spaces, elevating interiors with personalized craftsmanship and design solutions."
+          }
+        }
+      },
+      "block_order": [
+        "item_3kghCa",
+        "item_xWPM9y",
+        "item_nGPk8y",
+        "item_N9xA8L"
+      ],
+      "name": "Inspiration",
+      "settings": {
+        "heading": "Change the look of your house, change the perspective of others",
+        "margin_top_mobile": 24,
+        "margin_bottom_mobile": 40,
+        "margin_top_desktop": 70,
+        "margin_bottom_desktop": 80,
+        "heading_size": "h_custom",
+        "heading_alignment": "center",
+        "title_size_mobile": 20,
+        "title_line_mobile": 30,
+        "title_size_desktop": 24,
+        "title_line_desktop": 38,
+        "text_size_mobile": 14,
+        "text_line_mobile": 24,
+        "text_size_desktop": 16,
+        "text_line_desktop": 24
+      }
+    },
     "collapsible_content_tHV8Lq": {
       "type": "collapsible-content",
       "blocks": {
@@ -415,6 +484,7 @@
     "promotion_carousel_gRNAjb",
     "sale_block_gdEfYh",
     "contact_form_9CggVF",
+    "inspiration_image_qHzDpe",
     "collapsible_content_tHV8Lq",
     "image_banner_CGnqVe"
   ]
