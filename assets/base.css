@@ -2982,6 +2982,25 @@ details-disclosure > details {
   word-break: break-word;
 }
 
+.selling-color {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  padding: 0.3rem 0.9rem !important;
+  color: white;
+}
+
+.new-color {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  padding: 0.2rem 0 !important;
+  color: white;
+  max-width: 5rem;
+}
+
 @media screen and (min-width: 990px) {
   .badge {
     padding: 1.2rem 1.2rem;
