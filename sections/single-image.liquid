@@ -1,0 +1,274 @@
+{% style %}
+
+.single-banner-{{ section.id }}{
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.single-banner-{{ section.id }}::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0, {{ section.settings.image_overlay_opacity | divided_by: 100.0 }});
+  pointer-events: none;
+  z-index: 1;
+}
+
+.single-banner__image{
+  width: 320%;
+  height: 110%;
+  object-fit: fill;
+  display: block;
+  transform: translate(-57%, -4%);
+}
+
+.single-banner__content{
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  background: transparent;
+  letter-spacing: 0;
+  width: clamp(36rem, 60%, 54rem);
+}
+
+.single-banner__title{
+  font-weight: 400;
+  margin: 9rem 20% 1.2rem;
+  letter-spacing: 0;
+}
+
+.hsingle-banner {
+  font-size: 48px;
+  line-height: 64px;
+}
+
+.single-banner__description{
+  margin: 0;
+}
+
+@media screen and (min-width:450px){
+  .single-banner__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: none;
+    object-fit: center;
+  }
+}
+
+@media screen and (min-width:768px){
+
+  .single-banner-{{ section.id }}{
+    height: 349px;
+  }
+
+  .single-banner__title{
+    margin: 0;
+  }
+
+  .hsingle-banner {
+    font-size: 56px;
+    line-height: 80px;
+  }
+
+  .single-banner__content{
+    top: 53%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+{% endstyle %}
+
+<div class="single-banner-{{ section.id }}">
+  {% if section.settings.image != blank %}
+    {{ section.settings.image | image_url: width: 2000 | image_tag:
+      class: 'single-banner__image',
+      loading: 'lazy'
+    }}
+  {% endif %}
+  <div class="single-banner__content color-{{ section.settings.color_scheme }}">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'heading' %}
+          <h2 class="single-banner__title {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+            {{ block.settings.heading }}
+          </h2>
+        {% when 'text' %}
+          <p
+            class="single-banner__description"
+            style="
+              font-size: {{ block.settings.banner__text--fs }}px;
+              line-height: {{ block.settings.banner__text--lh }}px;
+            "
+            {{ block.shopify_attributes }}
+          >
+            {{ block.settings.text }}
+          </p>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Banner",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image-banner.settings.image.label"
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-banner.settings.content.content"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-banner.settings.mobile.content"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.image-banner.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "t:sections.image-banner.blocks.heading.settings.heading.default",
+          "label": "t:sections.image-banner.blocks.heading.settings.heading.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "hxl",
+              "label": "t:sections.all.heading_size.options__4.label"
+            },
+            {
+              "value": "hxxl",
+              "label": "t:sections.all.heading_size.options__5.label"
+            },
+            {
+              "value": "hsingle-banner",
+              "label": "Single Banner"
+            }
+          ],
+          "default": "hsingle-banner",
+          "label": "t:sections.all.heading_size.label"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.image-banner.blocks.text.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "default": "t:sections.image-banner.blocks.text.settings.text.default",
+          "label": "t:sections.image-banner.blocks.text.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__1.label"
+            },
+            {
+              "value": "subtitle",
+              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__2.label"
+            },
+            {
+              "value": "caption-with-letter-spacing",
+              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__3.label"
+            }
+          ],
+          "default": "body",
+          "label": "t:sections.image-banner.blocks.text.settings.text_style.label"
+        },
+        {
+          "type": "range",
+          "id": "banner__text--fs",
+          "label": "Font Size",
+          "min": 8,
+          "max": 100,
+          "unit": "px",
+          "step": 2,
+          "default": 18
+        },
+        {
+          "type": "range",
+          "id": "banner__text--lh",
+          "label": "Line Height",
+          "min": 8,
+          "max": 100,
+          "unit": "px",
+          "step": 2,
+          "default": 30
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Banner",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
