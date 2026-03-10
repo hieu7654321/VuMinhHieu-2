@@ -108,7 +108,7 @@
   }
 
   .banner__media > img {
-    scale: 1.1;
+    scale: 1.11;
     object-position: 50% center;
   }
 
@@ -425,8 +425,6 @@
 .banner__box > * + .banner__text {
   /* margin-top: 1.5rem; */
   font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
   letter-spacing: 0;
 }
 
@@ -461,6 +459,10 @@
 
   .banner__box > * + .banner__text {
     margin-inline: auto;
+  }
+
+  .banner__text > p {
+    margin-left: 2rem;
   }
 }
 /* 
