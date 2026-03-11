@@ -521,7 +521,7 @@
       ],
       "name": "Service Features",
       "settings": {
-        "margin_mobile": 48,
+        "margin_mobile": 47,
         "margin_desktop": 80,
         "gap_mobile": 24,
         "gap_desktop": 10,
@@ -538,6 +538,30 @@
         "text_size_desktop": 16,
         "text_line_desktop": 24
       }
+    },
+    "contact_shop_kmHnap": {
+      "type": "contact-shop",
+      "name": "Layered Image Promo",
+      "settings": {
+        "color_scheme": "scheme-c66bb956-1d7e-4084-b78f-44bd0ed2891e",
+        "section_spacing_mobile": 30,
+        "section_spacing_desktop": 246,
+        "top_img1": "shopify://shop_images/Layered_Image_table.png",
+        "top_img2": "shopify://shop_images/Layer_Image_Chair.png",
+        "top_img3": "shopify://shop_images/Layer_Image_Accessories.png",
+        "bottom_img1": "shopify://shop_images/Layer_Image_Sitting.png",
+        "bottom_img2": "shopify://shop_images/Layer_Image_Decor.png",
+        "label": "renovate your home at",
+        "heading": "78 Trung Kinh, Yen Hoa, Cau Giay, Hanoi",
+        "heading_size_mobile": 32,
+        "heading_line_mobile": 56,
+        "heading_size_desktop": 32,
+        "heading_line_desktop": 56,
+        "label_size": 16,
+        "link_size": 16,
+        "link_text": "@ORANGY",
+        "link_url": "https://www.wgentech.com/"
+      }
     }
   },
   "order": [
@@ -550,6 +574,7 @@
     "inspiration_image_qHzDpe",
     "collapsible_content_tHV8Lq",
     "single_image_MhB6xx",
-    "service_features_DHB33g"
+    "service_features_DHB33g",
+    "contact_shop_kmHnap"
   ]
 }
