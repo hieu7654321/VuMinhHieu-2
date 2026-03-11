@@ -1,0 +1,230 @@
+{{ 'section-layered_image.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+
+.cshop-{{ section.id }}{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cshop-{{ section.id }} .cshop__all{
+    margin: {{ section.settings.section_spacing_mobile }}px 0;
+}
+
+.cshop-{{ section.id }} .cshop__label{
+    font-size: {{ section.settings.label_size }}px;
+}
+
+.cshop-{{ section.id }} .cshop__heading{
+    font-size: {{ section.settings.heading_size_mobile }}px;
+    line-height: {{ section.settings.heading_line_mobile }}px;
+}
+
+.cshop-{{ section.id }} .cshop__link a{
+    font-size: {{ section.settings.link_size }}px;
+}
+
+@media screen and (min-width:1024px){
+    .cshop-{{ section.id }} .cshop__all{
+        margin: clamp({{ section.settings.section_spacing_mobile }}px, 15%,{{ section.settings.section_spacing_desktop }}px) 0;
+    }
+
+    .cshop-{{ section.id }} .cshop__heading{
+        font-size: {{ section.settings.heading_size_desktop }}px;
+        line-height: {{ section.settings.heading_line_desktop }}px;
+    }
+}
+{% endstyle %}
+
+<section class="cshop-{{ section.id }} color-{{ section.settings.color_scheme }}">
+    <div class="cshop__all">
+        <div class="cshop__container">
+            <div class="cshop__content-container cshop__content-left">
+                <div class="cshop__image-stage cshop__image-stage--top">
+                    {% if section.settings.top_img1 %}
+                        {{ section.settings.top_img1 | image_url: width: 600 | image_tag: class: 'top-img1' }}
+                    {% endif %}
+                    {% if section.settings.top_img2 %}
+                        {{ section.settings.top_img2 | image_url: width: 600 | image_tag: class: 'top-img2' }}
+                    {% endif %}
+                    {% if section.settings.top_img3 %}
+                        {{ section.settings.top_img3 | image_url: width: 600 | image_tag: class: 'top-img3' }}
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="cshop__content-container cshop__content-center">
+                <div class="cshop__text">
+                    {% if section.settings.label != blank %}
+                        <div class="cshop__label">
+                        {{ section.settings.label }}
+                        </div>
+                    {% endif %}
+                    {% if section.settings.heading != blank %}
+                        <h2 class="cshop__heading">
+                        {{ section.settings.heading }}
+                    </h2>
+                    {% endif %}
+                    {% if section.settings.link_text != blank %}
+                        <div class="cshop__link">
+                            <a href="{{ section.settings.link_url }}">
+                                {{ section.settings.link_text }}
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="cshop__content-container cshop__content-right">
+                <div class="cshop__image-stage cshop__image-stage--bottom">
+                    {% if section.settings.bottom_img1 %}
+                        {{ section.settings.bottom_img1 | image_url: width: 600 | image_tag: class: 'bottom-img1' }}
+                    {% endif %}
+                    {% if section.settings.bottom_img2 %}
+                        {{ section.settings.bottom_img2 | image_url: width: 600 | image_tag: class: 'bottom-img2' }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name":"Layered Image Promo",
+    "settings":[
+        {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "scheme-1"
+        },
+        {
+            "type": "range",
+            "id": "section_spacing_mobile",
+            "label": "Section spacing mobile",
+            "min": 0,
+            "max": 80,
+            "step": 2,
+            "unit": "px",
+            "default": 44
+        },
+        {
+            "type": "range",
+            "id": "section_spacing_desktop",
+            "label": "Section spacing desktop",
+            "min": 0,
+            "max": 300,
+            "step": 6,
+            "unit": "px",
+            "default":60
+        },
+        {
+            "type": "header",
+            "content": "Images"
+        },
+        {"type": "image_picker", "id": "top_img1", "label": "Top image 1"},
+        {"type": "image_picker", "id": "top_img2", "label": "Top image 2"},
+        {"type": "image_picker", "id": "top_img3", "label": "Top image 3"},
+        {"type": "image_picker", "id": "bottom_img1", "label": "Bottom image 1"},
+        {"type": "image_picker", "id": "bottom_img2", "label": "Bottom image 2"},
+        {
+            "type": "header",
+            "content": "Scaling"
+        },
+        {
+            "type": "header",
+            "content": "Text"
+        },
+        {
+            "type": "text",
+            "id": "label",
+            "label": "Label",
+            "default": "renovate your home at"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "78 Trung Kinh, Yen Hoa, Cau Giay, Hanoi"
+        },
+        {
+            "type": "range",
+            "id": "heading_size_mobile",
+            "label": "Heading size mobile",
+            "min": 20,
+            "max": 60,
+            "step": 1,
+            "unit": "px",
+            "default":32
+        },
+        {
+            "type": "range",
+            "id": "heading_line_mobile",
+            "label": "Heading line mobile",
+            "min": 24,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "default":56
+        },
+
+        {
+            "type": "range",
+            "id": "heading_size_desktop",
+            "label": "Heading size desktop",
+            "min": 24,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "default": 40
+        },
+        {
+            "type": "range",
+            "id": "heading_line_desktop",
+            "label": "Heading line desktop",
+            "min": 28,
+            "max": 90,
+            "step": 1,
+            "unit": "px",
+            "default": 60
+        },
+        {
+            "type": "range",
+            "id": "label_size",
+            "label": "Label size",
+            "min": 10,
+            "max": 24,
+            "step": 1,
+            "unit": "px",
+            "default": 16
+        },
+        {
+            "type": "range",
+            "id": "link_size",
+            "label": "Link size",
+            "min": 10,
+            "max": 24,
+            "step": 1,
+            "unit": "px",
+            "default":16
+        },
+        {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link text",
+            "default": "@ORANGY"
+        },
+        {
+            "type": "url",
+            "id": "link_url",
+            "label": "Link URL"
+        }
+    ],
+    "presets":[
+        {
+            "name": "Layered Image Promo"
+        }
+    ]
+}
+{% endschema %}
