@@ -1,0 +1,87 @@
+.inspiration__container {
+  width: 100%;
+}
+
+.inspiration__header{
+  display: flex;
+  margin-bottom: 2.6rem;
+}
+
+.inspiration__heading{
+  font-weight: 400;
+  max-width: 36rem;
+}
+
+.inspiration__content{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  align-items: center;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.inspiration__block{
+  width: clamp(26.5rem, 26vw, 29.1rem);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  scroll-snap-align: start;
+}
+
+.inspiration__image{
+  width: 100%;
+  overflow: hidden;
+}
+
+.inspiration__image img{
+  display: block;
+  object-fit: contain;
+  width: clamp(26.5rem, 26vw, 29.1rem);
+}
+
+.inspiration__title{
+  font-weight:400;
+  margin-top: 2.1rem;
+  margin-bottom: 0;
+  letter-spacing: 0;
+}
+
+.inspiration__text{
+  margin-top: 0.4rem;
+  letter-spacing: 0;
+}
+
+.inspiration__image--portrait {
+  height: clamp(38.4rem, 40vw , 42.1rem);
+}
+
+.inspiration__image--landscape {
+  height: clamp(19.7rem, 20vw, 21.6rem);
+}
+
+@media screen and (min-width: 990px){
+  .inspiration__header{
+    margin-bottom: 2.8rem;
+  }
+
+  .inspiration__heading{
+    max-width: 63rem;
+  }
+
+  .inspiration__content{
+    justify-content: space-between;
+    gap: 40px;
+  }
+}
+
+@media screen and (min-width: 1500px){
+  .inspiration__container {
+      padding-inline: 0 !important;
+  }
+}

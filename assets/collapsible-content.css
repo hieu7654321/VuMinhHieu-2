@@ -56,13 +56,21 @@
 }
 
 .collapsible-content__heading {
+  width: 19.8rem;
   margin-bottom: 2rem;
   margin-top: 0;
 }
 
 @media screen and (min-width: 750px) {
   .collapsible-content__heading {
-    margin-bottom: 3rem;
+    margin-bottom: 3.8rem;
+    width: 44.9rem;
+  }
+  
+  .collapsible-content-wrapper-narrow {
+    margin: 0 auto;
+    padding-inline: 0;
+    max-width: clamp(71.9rem, 80vw, 141rem);
   }
 }
 
@@ -104,10 +112,10 @@
   background: rgba(var(--color-foreground), 0.04);
 }
 
-.collapsible-content summary:hover .accordion__title {
+/* .collapsible-content summary:hover .accordion__title {
   text-decoration: underline;
   text-underline-offset: 0.3rem;
-}
+} */
 
 /* check for flexbox gap in older Safari versions */
 @supports not (inset: 10px) {

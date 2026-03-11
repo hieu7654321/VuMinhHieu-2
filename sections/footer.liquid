@@ -11,8 +11,12 @@
   }
 
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: {{ section.settings.padding_top | times: 0.6 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.28 | round: 0 }}px;
+  }
+
+  #NewsletterForm--{{ section.id }} {
+    color: #000000;
   }
 
   @media screen and (min-width: 750px) {
@@ -170,6 +174,9 @@
               {%- if section.settings.newsletter_heading != blank -%}
                 <h2 class="footer-block__heading inline-richtext">{{ section.settings.newsletter_heading }}</h2>
               {%- endif -%}
+              {%- if section.settings.newsletter_subheading != blank -%}
+                <div class="footer-block__subheading inline-richtext">{{ section.settings.newsletter_subheading }}</div>
+              {%- endif -%}
               {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
                 <input type="hidden" name="contact[tags]" value="newsletter">
                 <div class="newsletter-form__field-wrapper">
@@ -194,9 +201,9 @@
                       placeholder="{{ 'newsletter.label' | t }}"
                       required
                     >
-                    <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                    {% comment %} <label class="field__label" for="NewsletterForm--{{ section.id }}">
                       {{ 'newsletter.label' | t }}
-                    </label>
+                    </label> {% endcomment %}
                     <button
                       type="submit"
                       class="newsletter-form__button field__button"
@@ -205,7 +212,7 @@
                       aria-label="{{ 'newsletter.button_label' | t }}"
                     >
                       <span class="svg-wrapper">
-                        {{- 'icon-arrow.svg' | inline_asset_content -}}
+                        {{- 'icon_send_arrow.svg' | inline_asset_content -}}
                       </span>
                     </button>
                   </div>
@@ -250,12 +257,7 @@
     {%- endunless -%}
   {%- endif -%}
 
-  <div
-    class="footer__content-bottom{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-    {% if settings.animations_reveal_on_scroll %}
-      data-cascade
-    {% endif %}
-  >
+  <div class="footer__content-bottom">
     <div class="footer__content-bottom-wrapper page-width">
       <div class="footer__column footer__localization isolate">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
@@ -300,9 +302,9 @@
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright caption">
         <small class="copyright__content"
-          >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+          >&copy; 2024 <span class="footer__content--shopname">{{ shop.name | link_to: routes.root_url -}}</span>
         </small>
-        <small class="copyright__content">{{ powered_by_link }}</small>
+        {% comment %} <small class="copyright__content">{{ powered_by_link }}</small> {% endcomment %}
         {%- if section.settings.show_policy -%}
           <ul class="policies list-unstyled">
             {%- for policy in shop.policies -%}
@@ -448,6 +450,12 @@
       "label": "t:sections.footer.settings.newsletter_heading.label"
     },
     {
+      "type": "inline_richtext",
+      "id": "newsletter_subheading",
+      "default": "t:sections.footer.settings.newsletter_heading.default",
+      "label": "Sub Heading"
+    },
+    {
       "type": "header",
       "content": "t:sections.footer.settings.header__9.content"
     },
@@ -515,7 +523,7 @@
       "id": "padding_top",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 2,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
       "default": 36
@@ -525,7 +533,7 @@
       "id": "padding_bottom",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 2,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36

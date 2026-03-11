@@ -1,0 +1,124 @@
+.cshop__all{
+    width: 100%;
+    max-width: clamp( 36rem, 80%, 141rem);
+}
+
+.cshop__container{
+    display: flex;
+    flex-direction: column;
+    gap: 2.6rem;
+    align-items: center;
+    width: 100%;
+}
+
+.cshop__content-container{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cshop__image-stage{
+    position: relative;
+    width: 100%;
+    max-width: 390px;
+    transform-origin: center;
+    transform: scale(1);
+}
+
+.cshop__image-stage--top{
+    aspect-ratio: 360/182.38;
+}
+
+.cshop__image-stage--bottom{
+    aspect-ratio: 360/109.19;
+}
+
+.cshop__image-stage img{
+    position: absolute;
+    max-width: none;
+}
+
+.top-img1{width: 30.33%;top: 36%;left: 0;z-index: 3;height: auto;}
+.top-img2{width: 30.33%;top: 0%;left: 27.5%;height: auto;}
+.top-img3{width: 30.33%;bottom: 0%;left: 69.6%;height: auto;}
+
+.bottom-img1{width: 30.33%;top: 10%;right: 63%;height: auto;}
+.bottom-img2{width: 30.33%;bottom: 0%;right: 8%;height: auto;}
+
+.cshop__text{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.cshop__label{
+    line-height: 24px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.cshop__heading{
+    font-weight: 400;
+    max-width: 30rem;
+    margin: auto;
+    letter-spacing: 0;
+}
+
+.cshop__link a{
+    display: inline-block;
+    margin-top: 1.1rem;
+    padding: 8px 40px;
+    border: 1px solid #D1CECA;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0;
+}
+
+@media screen and (min-width:1024px){
+    .cshop__container{
+        flex-direction: row;
+        max-width: 141rem;
+        gap: 0;
+        margin: auto;
+    }
+
+    .cshop__text{
+        gap: 2rem;
+    }
+
+    .cshop__label{
+        max-width: 16.5rem;
+        margin-inline: auto;
+    }
+
+    .cshop__content-left,
+    .cshop__content-right{
+        max-width: 42.3rem;
+    }
+
+    .cshop__content-center{
+        max-width: 56.4rem;
+    }
+
+    .cshop__image-stage{
+        max-width: 520px;
+        transform: scale(1.15);
+    }
+
+    .cshop__heading{
+        max-width: 38rem;
+    }
+
+    .top-img1{width: 37%;top: 15%;left: -1%;}
+    .top-img2{width: 63.73%;top: -82.4%;left: 12%;}
+    .top-img3{width: 45.2%;bottom: -71%;left: 42.4%;}
+
+    .bottom-img1{width: 67.84%;top: -157.5%;right: 0%;}
+    .bottom-img2{width: 51.4%;bottom: -139%;right: 36.5%;}
+}

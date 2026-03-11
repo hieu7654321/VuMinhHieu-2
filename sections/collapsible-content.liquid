@@ -3,8 +3,14 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.222 | round: 0 }}px;
+  }
+
+  .grid__item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem
   }
 
   @media screen and (min-width: 750px) {
@@ -21,7 +27,7 @@
       <div class="{% if section.settings.image == blank %}collapsible-content-wrapper-narrow{% else %}page-width{% endif %}">
         <div
           class="collapsible-content__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          style="text-align: {{ section.settings.heading_alignment }};"
+          style="display:flex; text-align: {{ section.settings.heading_alignment }};justify-content: {{ section.settings.heading_alignment }};"
         >
           {%- if section.settings.caption != blank -%}
             <p class="caption-with-letter-spacing">
@@ -85,7 +91,8 @@
                     <h3 class="accordion__title inline-richtext h4">
                       {{ block.settings.heading | default: block.settings.page.title | escape }}
                     </h3>
-                    {{- 'icon-caret.svg' | inline_asset_content -}}
+                    {% comment %} {{- 'icon-caret.svg' | inline_asset_content -}} {% endcomment %}
+                     <span class="faqs__mark"></span>
                   </summary>
                   <div
                     class="accordion__content rte"
@@ -105,6 +112,24 @@
     </div>
   </div>
 </div>
+{% javascript %}
+  document.addEventListener('shopify:section:load', initFaqAccordion);
+  document.addEventListener('DOMContentLoaded', initFaqAccordion);
+
+  function initFaqAccordion() {
+    const accordions = document.querySelectorAll('.accordion details');
+
+    accordions.forEach((accordion) => {
+      accordion.addEventListener('toggle', function () {
+        if (this.open) {
+          accordions.forEach((item) => {
+            if (item !== this) item.removeAttribute('open');
+          });
+        }
+      });
+    });
+  }  
+{% endjavascript %}
 
 {% schema %}
 {
@@ -149,6 +174,10 @@
         {
           "value": "hxxl",
           "label": "t:sections.all.heading_size.options__5.label"
+        },
+        {
+          "value": "h_custom",
+          "label": "Custom Heading"
         }
       ],
       "default": "h1",
@@ -270,7 +299,7 @@
       "id": "padding_top",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 2,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
       "default": 36
@@ -280,7 +309,7 @@
       "id": "padding_bottom",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 2,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36

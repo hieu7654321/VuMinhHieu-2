@@ -23,7 +23,9 @@
           "type": "text",
           "settings": {
             "text": "Clever products for every corner",
-            "text_style": "body"
+            "text_style": "body",
+            "banner__text--fs": 18,
+            "banner__text--lh": 30
           }
         },
         "buttons_a8rbFi": {
@@ -43,6 +45,7 @@
         "text_mMJUHt",
         "buttons_a8rbFi"
       ],
+      "name": "Hero Banner",
       "settings": {
         "image": "shopify://shop_images/hero.png",
         "image_overlay_opacity": 0,
@@ -166,7 +169,7 @@
         "columns_desktop": 4,
         "enable_desktop_slider": true,
         "full_width": false,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "solid",
         "color_scheme": "",
         "image_ratio": "portrait",
@@ -179,63 +182,245 @@
         "swipe_on_mobile": true,
         "enable_mixed_layout": false,
         "padding_top": 36,
-        "padding_bottom": 50,
+        "padding_bottom": 10,
         "padding_multiplier": 83,
         "margin_bottom_custom": 50
+      }
+    },
+    "promotion_carousel_gRNAjb": {
+      "type": "promotion-carousel",
+      "blocks": {
+        "text_item_7rkH47": {
+          "type": "text_item",
+          "settings": {
+            "text": "FIND INSPRATION"
+          }
+        },
+        "text_item_ffnqRm": {
+          "type": "text_item",
+          "settings": {
+            "text": "DESIGN FOR LIVING"
+          }
+        },
+        "text_item_ywR4Nx": {
+          "type": "text_item",
+          "settings": {
+            "text": "UNIQUE FURNITURE"
+          }
+        }
+      },
+      "block_order": [
+        "text_item_7rkH47",
+        "text_item_ffnqRm",
+        "text_item_ywR4Nx"
+      ],
+      "name": "Promotion Carousel",
+      "settings": {
+        "separator_image": "shopify://shop_images/star_black_png.png",
+        "color_scheme": "scheme-1",
+        "separator_height": 30,
+        "speed": 10,
+        "font_size_mobile": 60,
+        "line_height_mobile": 64,
+        "font_size_desktop": 74,
+        "line_height_desktop": 90,
+        "opacity": 0.5,
+        "margin_top_mobile": 16,
+        "margin_bottom_mobile": 20,
+        "margin_top_desktop": 58,
+        "margin_bottom_desktop": 40
+      }
+    },
+    "sale_block_gdEfYh": {
+      "type": "sale-block",
+      "blocks": {
+        "image_block_GRRzAm": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bundle_and_save.jpg"
+          }
+        },
+        "text_block_Hr98ad": {
+          "type": "text_block",
+          "settings": {
+            "label": "SEASON SALE COLLECTIONS",
+            "heading": "SALE 30% OFF",
+            "subtext": "Save extra on our sale collection\n*Runs until 14:00pm PST",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "image_block_6nDCC6": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Renovate_your_home.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_block_GRRzAm",
+        "text_block_Hr98ad",
+        "image_block_6nDCC6"
+      ],
+      "name": "Sale Block",
+      "settings": {
+        "color_scheme": "scheme-ba4987b0-e986-4c74-8f30-6849249c48ee",
+        "margin_top_mobile": 56,
+        "margin_bottom_mobile": 52,
+        "margin_top_desktop": 100,
+        "margin_bottom_desktop": 100,
+        "gap_mobile": 24,
+        "gap_desktop": 32,
+        "label_size_mobile": 16,
+        "label_size_desktop": 16,
+        "heading_size_mobile": 46,
+        "heading_line_height_mobile": 64,
+        "heading_size_desktop": 56,
+        "heading_line_height_desktop": 80,
+        "subtext_size_mobile": 14,
+        "subtext_size_desktop": 14,
+        "text_background": "#6e331a",
+        "text_color": "#ffffff"
       }
     },
     "contact_form_9CggVF": {
       "type": "contact-form",
       "name": "t:sections.contact-form.presets.name",
       "settings": {
-        "heading": "Contact form",
-        "heading_size": "h1",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "Contact us to order and receive purchase advice",
+        "heading_alignment": "center",
+        "your_message_placeholder": "Example: I want to buy 6 chairs and a table brand Oda ottoman...",
+        "heading_size": "h_custom",
+        "color_scheme": "scheme-8bf5047a-1bd2-4b8e-98f9-37949ebc40d3",
+        "padding_top": 100,
+        "padding_bottom": 56
+      }
+    },
+    "inspiration_image_qHzDpe": {
+      "type": "inspiration-image",
+      "blocks": {
+        "item_3kghCa": {
+          "type": "item",
+          "name": "Showroom",
+          "settings": {
+            "image": "shopify://shop_images/Showroom.png",
+            "aspect": "portrait",
+            "title": "Showroom",
+            "text": "Experience design for living at our flagship showroom located in Boston’s South End."
+          }
+        },
+        "item_xWPM9y": {
+          "type": "item",
+          "name": "Interior work",
+          "settings": {
+            "image": "shopify://shop_images/Interior_work.png",
+            "aspect": "landscape",
+            "title": "Interior work",
+            "text": "Crafting spaces through meticulous planning, material selection, and creative execution, enhancing aesthetics and functionality."
+          }
+        },
+        "item_nGPk8y": {
+          "type": "item",
+          "name": "Authentic design",
+          "settings": {
+            "image": "shopify://shop_images/Authentic_Design.jpg",
+            "aspect": "portrait",
+            "title": "Authentic design",
+            "text": "We only carry designs we believe in ethically and aesthetically – original, authentic pieces that are made to last."
+          }
+        },
+        "item_N9xA8L": {
+          "type": "item",
+          "name": "Custom additions",
+          "settings": {
+            "image": "shopify://shop_images/Custom_additions.png",
+            "aspect": "landscape",
+            "title": "Custom additions",
+            "text": "Tailoring unique elements to spaces, elevating interiors with personalized craftsmanship and design solutions."
+          }
+        }
+      },
+      "block_order": [
+        "item_3kghCa",
+        "item_xWPM9y",
+        "item_nGPk8y",
+        "item_N9xA8L"
+      ],
+      "name": "Inspiration",
+      "settings": {
+        "heading": "Change the look of your house, change the perspective of others",
+        "margin_top_mobile": 24,
+        "margin_bottom_mobile": 40,
+        "margin_top_desktop": 70,
+        "margin_bottom_desktop": 78,
+        "heading_size": "h_custom",
+        "heading_alignment": "center",
+        "title_size_mobile": 20,
+        "title_line_mobile": 30,
+        "title_size_desktop": 24,
+        "title_line_desktop": 38,
+        "text_size_mobile": 14,
+        "text_line_mobile": 24,
+        "text_size_desktop": 16,
+        "text_line_desktop": 24
       }
     },
     "collapsible_content_tHV8Lq": {
       "type": "collapsible-content",
       "blocks": {
+        "collapsible_row_FJJpkY": {
+          "type": "collapsible_row",
+          "name": "How long does shipping take?",
+          "settings": {
+            "heading": "How long does shipping take?",
+            "icon": "none",
+            "row_content": "<p>Your sales managers will go into the field feeling energized, excited, and inspired.<br/> We are a full service business development group – we build strategies and systems.</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_VEhMny": {
           "type": "collapsible_row",
+          "name": "Does my piece come in any packaging?",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "Does my piece come in any packaging?",
+            "icon": "none",
+            "row_content": "<p>Yes, all our products come in protective and aesthetically pleasing packaging to ensure they arrive in perfect condition. Each product is securely wrapped, and we use eco-friendly materials whenever possible. Additionally, many of our products come in recyclable containers to support sustainability.</p>",
             "page": ""
           }
         },
         "collapsible_row_mxtkrG": {
           "type": "collapsible_row",
+          "name": "Do you ship internationally?",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "Do you ship internationally?",
+            "icon": "none",
+            "row_content": "<p>Yes, we do ship internationally! We offer worldwide shipping to ensure customers around the globe can enjoy our products. Please note that shipping times and costs may vary depending on the destination country. International customers may also be subject to customs fees or import duties imposed by their country's customs authorities.</p>",
             "page": ""
           }
         },
         "collapsible_row_MeQRx6": {
           "type": "collapsible_row",
+          "name": "What payment methods do you accept?",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "What payment methods do you accept?",
+            "icon": "none",
+            "row_content": "<p>We accept a variety of payment methods to make your shopping experience convenient. These include credit cards (Visa, Mastercard, American Express), PayPal, and, in some regions, alternative payment methods such as Apple Pay or Google Pay. Rest assured, your payment information is secure and protected during the checkout process.</p>",
             "page": ""
           }
         },
         "collapsible_row_whdp6K": {
           "type": "collapsible_row",
+          "name": "What should I do if my order is not placed?",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "What should I do if my order is not placed?",
+            "icon": "none",
+            "row_content": "<p>We’re sorry to hear that you’re unable to place an order. Please contact Customer Service and we will work on resolving the issue as quickly as possible.</p>",
             "page": ""
           }
         }
       },
       "block_order": [
+        "collapsible_row_FJJpkY",
         "collapsible_row_VEhMny",
         "collapsible_row_mxtkrG",
         "collapsible_row_MeQRx6",
@@ -244,53 +429,138 @@
       "name": "FAQs",
       "settings": {
         "caption": "",
-        "heading": "Collapsible content",
-        "heading_size": "h1",
+        "heading": "Discover more in our FAQs",
+        "heading_size": "h_custom",
         "heading_alignment": "center",
         "layout": "none",
         "container_color_scheme": "",
         "color_scheme": "",
-        "open_first_collapsible_row": false,
+        "open_first_collapsible_row": true,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 8,
+        "padding_bottom": 90
       }
     },
-    "image_banner_CGnqVe": {
-      "type": "image-banner",
+    "single_image_MhB6xx": {
+      "type": "single-image",
       "blocks": {
-        "heading_Hx4p6G": {
+        "heading_qe8e89": {
           "type": "heading",
           "settings": {
             "heading": "Elevate Your Home",
-            "heading_size": "h0"
+            "heading_size": "hsingle-banner"
           }
         },
-        "text_ki9PdL": {
+        "text_T9wMyR": {
           "type": "text",
           "settings": {
             "text": "Clever products for every corner",
-            "text_style": "body"
+            "text_style": "body",
+            "banner__text--fs": 16,
+            "banner__text--lh": 24
           }
         }
       },
       "block_order": [
-        "heading_Hx4p6G",
-        "text_ki9PdL"
+        "heading_qe8e89",
+        "text_T9wMyR"
       ],
+      "name": "Custom Banner",
       "settings": {
         "image": "shopify://shop_images/Elevate-your-home.png",
         "image_overlay_opacity": 50,
-        "image_height": "small",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0",
-        "stack_images_on_mobile": false,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
+        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0"
+      }
+    },
+    "service_features_DHB33g": {
+      "type": "service-features",
+      "blocks": {
+        "service_FMfQcx": {
+          "type": "service",
+          "name": "Free & fast delivery",
+          "settings": {
+            "icon": "shopify://shop_images/Free_and_Fast_delivery.png",
+            "heading": "Free & fast delivery",
+            "text": "We offer free shipping with ground delivery to the lower 48 states."
+          }
+        },
+        "service_G7T9VK": {
+          "type": "service",
+          "name": "Online support",
+          "settings": {
+            "icon": "shopify://shop_images/Online_Support.png",
+            "heading": "Online support",
+            "text": "Online Support24 hours a day,<br>\n7 days a week"
+          }
+        },
+        "service_VJtmgk": {
+          "type": "service",
+          "name": "30 Days return",
+          "settings": {
+            "icon": "shopify://shop_images/30_Days_Return.png",
+            "heading": "30 Days return",
+            "text": "Exchange or return items free of charge within 30 days"
+          }
+        },
+        "service_rxC3Aw": {
+          "type": "service",
+          "name": "Flexible payment",
+          "settings": {
+            "icon": "shopify://shop_images/Payment.png",
+            "heading": "Flexible payment",
+            "text": "Pay conveniently using multiple credit cards for added flexibility."
+          }
+        }
+      },
+      "block_order": [
+        "service_FMfQcx",
+        "service_G7T9VK",
+        "service_VJtmgk",
+        "service_rxC3Aw"
+      ],
+      "name": "Service Features",
+      "settings": {
+        "margin_mobile": 47,
+        "margin_desktop": 80,
+        "gap_mobile": 24,
+        "gap_desktop": 10,
+        "item_gap_mobile": 16,
+        "icon_size_mobile": 40,
+        "icon_size_desktop": 72,
+        "item_width": 33,
+        "heading_size_mobile": 20,
+        "heading_line_mobile": 26,
+        "heading_size_desktop": 20,
+        "heading_line_desktop": 32,
+        "text_size_mobile": 14,
+        "text_line_mobile": 24,
+        "text_size_desktop": 16,
+        "text_line_desktop": 24
+      }
+    },
+    "contact_shop_kmHnap": {
+      "type": "contact-shop",
+      "name": "Layered Image Promo",
+      "settings": {
+        "color_scheme": "scheme-c66bb956-1d7e-4084-b78f-44bd0ed2891e",
+        "section_spacing_mobile": 30,
+        "section_spacing_desktop": 246,
+        "top_img1": "shopify://shop_images/Layered_Image_table.png",
+        "top_img2": "shopify://shop_images/Layer_Image_Chair.png",
+        "top_img3": "shopify://shop_images/Layer_Image_Accessories.png",
+        "bottom_img1": "shopify://shop_images/Layer_Image_Sitting.png",
+        "bottom_img2": "shopify://shop_images/Layer_Image_Decor.png",
+        "label": "renovate your home at",
+        "heading": "78 Trung Kinh, Yen Hoa, Cau Giay, Hanoi",
+        "heading_size_mobile": 32,
+        "heading_line_mobile": 56,
+        "heading_size_desktop": 32,
+        "heading_line_desktop": 56,
+        "label_size": 16,
+        "link_size": 16,
+        "link_text": "@ORANGY",
+        "link_url": "https://www.wgentech.com/"
       }
     }
   },
@@ -298,8 +568,13 @@
     "image_banner",
     "featured_collection",
     "featured_collection_WffEhd",
+    "promotion_carousel_gRNAjb",
+    "sale_block_gdEfYh",
     "contact_form_9CggVF",
+    "inspiration_image_qHzDpe",
     "collapsible_content_tHV8Lq",
-    "image_banner_CGnqVe"
+    "single_image_MhB6xx",
+    "service_features_DHB33g",
+    "contact_shop_kmHnap"
   ]
 }

@@ -260,12 +260,12 @@
     },
     "contact": {
       "form": {
-        "title": "Contact form",
+        "title": "Contact us to order and receive purchase advice",
         "name": "Name",
         "email": "Email",
-        "phone": "Phone number",
-        "comment": "Comment",
-        "send": "Send",
+        "phone": "Phone",
+        "comment": "Your message",
+        "send": "Submit now",
         "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
         "error_heading": "Please adjust the following:"
       }
