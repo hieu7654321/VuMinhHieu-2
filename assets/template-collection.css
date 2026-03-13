@@ -114,7 +114,7 @@
 
 .collection-tabs {
   display: flex;
-  gap: 2.5rem;
+  gap: 2.8rem;
   margin: 3.5rem 0 2rem 1.5rem;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -135,6 +135,7 @@
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0;
+  font-family: var(--font-body-family);
 }
 
 .collection-tab-button.is-active {
@@ -157,7 +158,7 @@
 @media screen and (min-width: 990px) {
   .collection-tabs {
     margin: auto 0 auto auto;
-    gap: 3.6rem;
+    gap: 4.2rem;
   }
 
   .flex {

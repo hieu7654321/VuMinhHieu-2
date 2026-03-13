@@ -20,9 +20,133 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "single_image_eJDtrR": {
+      "type": "single-image",
+      "blocks": {
+        "heading_BiEywL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Elevate Your Home",
+            "heading_size": "hsingle-banner"
+          }
+        },
+        "text_L9jxMp": {
+          "type": "text",
+          "settings": {
+            "text": "Clever products for every corner",
+            "text_style": "body",
+            "banner__text--fs": 16,
+            "banner__text--lh": 24
+          }
+        }
+      },
+      "block_order": [
+        "heading_BiEywL",
+        "text_L9jxMp"
+      ],
+      "name": "Custom Banner",
+      "settings": {
+        "image": "shopify://shop_images/Elevate-your-home.png",
+        "image_overlay_opacity": 40,
+        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0"
+      }
+    },
+    "service_features_m638PQ": {
+      "type": "service-features",
+      "blocks": {
+        "service_zeN9kP": {
+          "type": "service",
+          "name": "Free & fast delivery",
+          "settings": {
+            "icon": "shopify://shop_images/Free_and_Fast_delivery.png",
+            "heading": "Free & fast delivery",
+            "text": "We offer free shipping with ground delivery to the lower 48 states."
+          }
+        },
+        "service_EDVzDT": {
+          "type": "service",
+          "name": "Online support",
+          "settings": {
+            "icon": "shopify://shop_images/Online_Support.png",
+            "heading": "Online support",
+            "text": "Online Support24 hours a day,<br>\n7 days a week"
+          }
+        },
+        "service_jxEFKa": {
+          "type": "service",
+          "name": "30 Days return",
+          "settings": {
+            "icon": "shopify://shop_images/30_Days_Return.png",
+            "heading": "30 Days return",
+            "text": "Exchange or return items free of charge within 30 days"
+          }
+        },
+        "service_L3BJ4A": {
+          "type": "service",
+          "name": "Flexible payment",
+          "settings": {
+            "icon": "shopify://shop_images/Payment.png",
+            "heading": "Flexible payment",
+            "text": "Pay conveniently using multiple credit cards for added flexibility."
+          }
+        }
+      },
+      "block_order": [
+        "service_zeN9kP",
+        "service_EDVzDT",
+        "service_jxEFKa",
+        "service_L3BJ4A"
+      ],
+      "name": "Service Features",
+      "settings": {
+        "margin_mobile": 47,
+        "margin_desktop": 80,
+        "gap_mobile": 24,
+        "gap_desktop": 10,
+        "item_gap_mobile": 16,
+        "icon_size_mobile": 40,
+        "icon_size_desktop": 72,
+        "item_width": 33,
+        "heading_size_mobile": 20,
+        "heading_line_mobile": 26,
+        "heading_size_desktop": 20,
+        "heading_line_desktop": 32,
+        "text_size_mobile": 14,
+        "text_line_mobile": 24,
+        "text_size_desktop": 16,
+        "text_line_desktop": 24
+      }
+    },
+    "contact_shop_Y6yxfp": {
+      "type": "contact-shop",
+      "name": "Layered Image Promo",
+      "settings": {
+        "color_scheme": "scheme-c66bb956-1d7e-4084-b78f-44bd0ed2891e",
+        "section_spacing_mobile": 30,
+        "section_spacing_desktop": 246,
+        "top_img1": "shopify://shop_images/Layered_Image_table.png",
+        "top_img2": "shopify://shop_images/Layer_Image_Chair.png",
+        "top_img3": "shopify://shop_images/Layer_Image_Accessories.png",
+        "bottom_img1": "shopify://shop_images/Layer_Image_Sitting.png",
+        "bottom_img2": "shopify://shop_images/Layer_Image_Decor.png",
+        "label": "renovate your home at",
+        "heading": "78 Trung Kinh, Yen Hoa, Cau Giay, Hanoi",
+        "heading_size_mobile": 32,
+        "heading_line_mobile": 56,
+        "heading_size_desktop": 32,
+        "heading_line_desktop": 56,
+        "label_size": 16,
+        "link_size": 16,
+        "link_text": "@ORANGY",
+        "link_url": "https://www.wgentech.com/"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "single_image_eJDtrR",
+    "service_features_m638PQ",
+    "contact_shop_Y6yxfp"
   ]
 }
