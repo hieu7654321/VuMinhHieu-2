@@ -44,6 +44,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    gap: 2rem;
   }
 
   .list-menu--inline {
@@ -59,6 +60,12 @@
     display: flex;
     align-items: center;
     line-height: calc(1 + 0.3 / var(--font-body-scale));
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    vertical-align: middle;
+    text-transform: capitalize;
   }
 
   .list-menu__item--link {
@@ -85,7 +92,7 @@
 
 {%- style -%}
   .header {
-    padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
+    padding: 17.6px 0.4rem 17.6px 2.4rem;
   }
 
   .section-header {
@@ -101,8 +108,7 @@
 
   @media screen and (min-width: 990px) {
     .header {
-      padding-top: {{ section.settings.padding_top_desk }}px;
-      padding-bottom: {{ section.settings.padding_bottom_desk }}px;
+      padding: {{ section.settings.padding_top_desk }}px 2rem {{ section.settings.padding_bottom_desk }}px 2rem;
     }
   }
 {%- endstyle -%}
@@ -143,8 +149,8 @@
       assign localization_forms = true
     endif
   -%}
-  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
-    {% comment %} {%- liquid
+  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} {% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
+    {%- liquid
       if section.settings.menu != blank
         render 'header-drawer'
       endif
@@ -152,7 +158,7 @@
       if section.settings.logo_position == 'top-center' or section.settings.menu == blank
         render 'header-search', input_id: 'Search-In-Modal-1'
       endif
-    -%} {% endcomment %}
+    -%}
 
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
@@ -179,7 +185,7 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2" {% if section.settings.uppercase %}style="text-transform: uppercase;"{% endif %} >{{ shop.name }}</span>
+          <div class="h2" {% if section.settings.uppercase %}style="text-transform: uppercase;"{% endif %} >{{ shop.name }}</div>
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
@@ -222,7 +228,7 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2" {% if section.settings.uppercase %}style="text-transform: uppercase;"{% endif %} >{{ shop.name }}</span>
+          <div class="h2" {% if section.settings.uppercase %}style="text-transform: uppercase;"{% endif %} >{{ shop.name }}</div>
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
@@ -230,7 +236,7 @@
       {%- endif -%}
     {%- endif -%}
 
-    {% comment %} <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
+    <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <localization-form class="small-hide medium-hide" data-prevent-hide>
@@ -308,7 +314,7 @@
           </div>
         {%- endif -%}
       </a>
-    </div> {% endcomment %}
+    </div>
   </header>
 </{{ header_tag }}>
 
