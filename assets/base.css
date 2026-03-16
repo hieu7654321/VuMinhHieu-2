@@ -2152,6 +2152,8 @@ input[type='checkbox'] {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: 'announcements';
+  padding-inline: 1.7rem;
+  max-width: none;
 }
 
 .utility-bar__grid .list-social {
@@ -2222,11 +2224,13 @@ input[type='checkbox'] {
 .announcement-bar .slider-button--next {
   margin-right: -1.7rem;
   /* min-width: 44px; */
+  max-width: 3.6rem
 }
 
 .announcement-bar .slider-button--prev {
   margin-left: -1.7rem;
   /* min-width: 44px; */
+  max-width: 3.6rem;
 }
 
 .announcement-bar .slider-button--next:focus-visible,
@@ -2254,8 +2258,8 @@ input[type='checkbox'] {
 
 @media screen and (min-width: 990px) {
   body:has(.section-header .header:not(.drawer-menu)) .utility-bar .page-width {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 1.9rem;
+    padding-right: 1.9rem;
   }
 
   .announcement-bar-slider {
@@ -2486,7 +2490,7 @@ input[type='checkbox'] {
 
 .header__heading-link {
   display: inline-block;
-  padding: 0.75rem;
+  /* padding: 0.75rem; */
   text-decoration: none;
   word-break: break-word;
 }
@@ -2557,7 +2561,8 @@ input[type='checkbox'] {
   display: flex;
   grid-area: icons;
   justify-self: end;
-  padding-right: 0.8rem;
+  /* padding-right: 0.8rem; */
+  gap: 1.6rem;
 }
 
 .header__icons .shopify-app-block {
@@ -2583,7 +2588,7 @@ input[type='checkbox'] {
 
 .header__icon .svg-wrapper {
   width: 44px;
-  height: 40px;
+  height: 34px;
 }
 
 .header__icon::after {
@@ -2604,14 +2609,14 @@ input[type='checkbox'] {
 
 .header__icon,
 .header__icon--cart .icon {
-  height: 4.4rem;
-  width: 4.4rem;
+  height: 2.4rem;
+  width: 2.4rem;
   padding: 0;
 }
 
 .header__icon--cart {
   position: relative;
-  margin-right: -1.2rem;
+  margin-right: 0.8rem;
 }
 
 .header__icon--menu[aria-expanded='true']::before {
@@ -2685,6 +2690,10 @@ menu-drawer + .header__search {
   .header:not(.header--top-center) > .header__search,
   .header--top-center * > .header__search {
     display: none;
+  }
+
+  .header__icons {
+    gap: 2.4rem;
   }
 }
 
@@ -2809,7 +2818,7 @@ details[open] > .header__submenu {
 
 /* Header menu */
 .header__inline-menu {
-  margin-left: -1.2rem;
+  /* margin-left: -1.2rem; */
   grid-area: navigation;
   display: none;
 }
@@ -2842,7 +2851,7 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item {
-  padding: 1.2rem;
+  padding: 0.5rem 0;
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
 }
@@ -2873,15 +2882,15 @@ details[open] > .header__menu-item .icon-caret {
 }
 
 .header__active-menu-item {
-  transition: text-decoration-thickness var(--duration-short) ease;
+  /* transition: text-decoration-thickness var(--duration-short) ease; */
   color: rgb(var(--color-foreground));
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  /* text-decoration: underline;
+  text-underline-offset: 0.3rem; */
 }
 
-.header__menu-item:hover .header__active-menu-item {
+/* .header__menu-item:hover .header__active-menu-item {
   text-decoration-thickness: 0.2rem;
-}
+} */
 
 .header__submenu {
   transition: opacity var(--duration-default) ease, transform var(--duration-default) ease;
