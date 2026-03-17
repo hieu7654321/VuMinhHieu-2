@@ -14,6 +14,7 @@
       "blocks": {
         "vendor": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "{{ product.vendor }}",
             "text_style": "uppercase"
@@ -110,14 +111,14 @@
           "settings": {
             "caption": "THE TIRED MAN",
             "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
+            "text_size": "custom_imgtxt"
           }
         },
         "heading_37nJGx": {
           "type": "heading",
           "settings": {
             "heading": "Lets you sink into its plush and comforting embrace after a day.",
-            "heading_size": "h2"
+            "heading_size": "h_custom"
           }
         },
         "text_3wChWM": {
@@ -135,7 +136,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Product_image_with_text.jpg",
+        "image": "shopify://shop_images/imgtxt1.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -259,14 +260,14 @@
           "settings": {
             "caption": "THE TIRED MAN",
             "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
+            "text_size": "custom_imgtxt"
           }
         },
         "heading_UpcWEr": {
           "type": "heading",
           "settings": {
             "heading": "Unwind in plush comfort with this unique table retreat.",
-            "heading_size": "h2"
+            "heading_size": "h_custom"
           }
         },
         "text_TRAJbR": {
@@ -284,7 +285,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Product_image_with_text_2.png",
+        "image": "shopify://shop_images/imgtxt2.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",

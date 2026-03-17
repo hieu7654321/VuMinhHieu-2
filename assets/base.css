@@ -426,6 +426,16 @@ blockquote {
   letter-spacing: 0.16rem;
 }
 
+.caption-with-letter-spacing--custom_imgtxt {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: var(--color-foreground);
+}
+
 .caption-with-letter-spacing--large {
   font-size: 1.4rem;
   letter-spacing: 0.18rem;
@@ -2998,6 +3008,7 @@ details-disclosure > details {
   letter-spacing: 0;
   padding: 0.3rem 0.9rem !important;
   color: white;
+  background-color: #000;
 }
 
 .new-color {
@@ -3008,6 +3019,7 @@ details-disclosure > details {
   padding: 0.2rem 0 !important;
   color: white;
   max-width: 5rem;
+  background-color: #054E4A;
 }
 
 @media screen and (min-width: 990px) {

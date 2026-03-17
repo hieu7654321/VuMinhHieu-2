@@ -19,6 +19,35 @@ product-info {
   padding-left: 0;
 }
 
+.main-product__navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.main-product__navigation > a {
+  font-weight: 500;
+  font-size: 13.5px;
+  line-height: 24px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #000;
+}
+
+.main-product__navigation > .svg-wrapper {
+  transform: rotate(-90deg);
+  width: 12px;
+  height: 12px;
+}
+
+@media screen and (min-width: 1500px) {
+  .main-product__navigation {
+    padding-top: 26px;
+  }
+}  
+
 @media screen and (min-width: 750px) {
   .product__column-sticky {
     display: block;
