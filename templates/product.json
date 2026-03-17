@@ -72,7 +72,7 @@
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail_slider",
         "mobile_thumbnails": "hide",
         "media_position": "left",
         "image_zoom": "lightbox",
@@ -84,6 +84,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -98,6 +99,55 @@
         "show_rating": false,
         "padding_top": 36,
         "padding_bottom": 28
+      }
+    },
+    "image_with_text_xPmpiF": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_wVgNJH": {
+          "type": "caption",
+          "name": "THE TIRED MAN",
+          "settings": {
+            "caption": "THE TIRED MAN",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_37nJGx": {
+          "type": "heading",
+          "settings": {
+            "heading": "Lets you sink into its plush and comforting embrace after a day.",
+            "heading_size": "h2"
+          }
+        },
+        "text_3wChWM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Considered one of Denmark’s greatest and most influential architects, Mogens Lassen pioneered Danish Functionalism, taking his cues from Bauhaus sensibilities. His interior designs are a natural continuation of his architectural approach and add energy and atmosphere to everyday living spaces and tasks. From decorative objects to larger furniture designs, his designs delicately balance presence without drawing undue attention, finding their natural place in any space.</p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "caption_wVgNJH",
+        "heading_37nJGx",
+        "text_3wChWM"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Product_image_with_text.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "inspiration_image_zjeac3": {
@@ -167,6 +217,86 @@
         "text_line_mobile": 24,
         "text_size_desktop": 16,
         "text_line_desktop": 26
+      }
+    },
+    "single_image_Ka7WGV": {
+      "type": "single-image",
+      "blocks": {
+        "heading_pgYypQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Designed by Flemming Lassen",
+            "heading_size": "hsingle-banner"
+          }
+        },
+        "text_HX6kQN": {
+          "type": "text",
+          "settings": {
+            "text": "A timeless icon, the mid-century armchair, The Tired Man, lets you sink into its plush and comforting embrace after a long day.",
+            "text_style": "body",
+            "banner__text--fs": 16,
+            "banner__text--lh": 24
+          }
+        }
+      },
+      "block_order": [
+        "heading_pgYypQ",
+        "text_HX6kQN"
+      ],
+      "name": "Custom Banner",
+      "settings": {
+        "image": "shopify://shop_images/Picture.png",
+        "image_overlay_opacity": 0,
+        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0"
+      }
+    },
+    "image_with_text_4PA9Jr": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_gGHNfx": {
+          "type": "caption",
+          "name": "THE TIRED MAN",
+          "settings": {
+            "caption": "THE TIRED MAN",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_UpcWEr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Unwind in plush comfort with this unique table retreat.",
+            "heading_size": "h2"
+          }
+        },
+        "text_TRAJbR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Escape to relaxation with this unique table retreat, designed for plush comfort. Sink into soft, luxurious seating that cradles your body, offering a perfect blend of style and coziness. Ideal for unwinding, reading, or enjoying a drink, this retreat provides an elegant and serene ambiance. Indulge in a sanctuary where you can relax and rejuvenate, experiencing comfort like never before. Embrace the ultimate retreat for<br/>your leisure moments, combining elegance with unmatched comfort.</p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "caption_gGHNfx",
+        "heading_UpcWEr",
+        "text_TRAJbR"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Product_image_with_text_2.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "single_image_NhpEx4": {
@@ -294,7 +424,10 @@
   "order": [
     "main",
     "related-products",
+    "image_with_text_xPmpiF",
     "inspiration_image_zjeac3",
+    "single_image_Ka7WGV",
+    "image_with_text_4PA9Jr",
     "single_image_NhpEx4",
     "service_features_dKfrdT",
     "contact_shop_HTkmiE"
