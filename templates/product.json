@@ -227,7 +227,7 @@
           "type": "heading",
           "settings": {
             "heading": "Designed by Flemming Lassen",
-            "heading_size": "hsingle-banner"
+            "heading_size": "product-banner"
           }
         },
         "text_HX6kQN": {
@@ -235,7 +235,7 @@
           "settings": {
             "text": "A timeless icon, the mid-century armchair, The Tired Man, lets you sink into its plush and comforting embrace after a long day.",
             "text_style": "body",
-            "banner__text--fs": 16,
+            "banner__text--fs": 15,
             "banner__text--lh": 24
           }
         }
@@ -246,9 +246,10 @@
       ],
       "name": "Custom Banner",
       "settings": {
-        "image": "shopify://shop_images/Picture.png",
+        "image": "shopify://shop_images/Product-Banner.webp",
         "image_overlay_opacity": 0,
-        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0"
+        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0",
+        "ci-height": "high"
       }
     },
     "image_with_text_4PA9Jr": {
@@ -328,7 +329,8 @@
       "settings": {
         "image": "shopify://shop_images/Elevate-your-home.png",
         "image_overlay_opacity": 50,
-        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0"
+        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0",
+        "ci-height": "small"
       }
     },
     "service_features_dKfrdT": {
