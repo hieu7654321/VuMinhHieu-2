@@ -28,11 +28,15 @@
           "type": "price",
           "settings": {}
         },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "swatch_shape": "circle"
+            "swatch_shape": "square"
           }
         },
         "quantity_selector": {
@@ -42,13 +46,51 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
+        "icon_with_text_WAg4Rx": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "box",
+            "heading_1": "Orders over ${{ product.metafields.products_info.ship_free.value }} ship free",
+            "icon_2": "return",
+            "heading_2": "{{ product.metafields.products_info.day_returns.value }} day returns",
+            "icon_3": "none",
+            "heading_3": ""
+          }
+        },
+        "collapsible_tab_7WkGyT": {
+          "type": "collapsible_tab",
+          "name": "Material & Care",
+          "settings": {
+            "heading": "Material & Care",
+            "icon": "none",
+            "content": "<p>{{ product.metafields.products_info.material_and_care | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_YtL9cV": {
+          "type": "collapsible_tab",
+          "name": "Dimensions",
+          "settings": {
+            "heading": "Dimensions",
+            "icon": "none",
+            "content": "<p>{{ product.metafields.products_info.dimensions | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_aP3fct": {
+          "type": "collapsible_tab",
+          "name": "Shipping & Returns",
+          "settings": {
+            "heading": "Shipping & Returns",
+            "icon": "none",
+            "content": "<p>{{ product.metafields.products_info.shipping_and_returns | metafield_tag }}</p>",
+            "page": ""
+          }
         },
         "share": {
           "type": "share",
@@ -61,15 +103,19 @@
         "vendor",
         "title",
         "price",
+        "description",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
+        "icon_with_text_WAg4Rx",
+        "collapsible_tab_7WkGyT",
+        "collapsible_tab_YtL9cV",
+        "collapsible_tab_aP3fct",
         "share"
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-c01e3526-9186-4d40-ad68-c41f9ba9b2c8",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -79,7 +125,7 @@
         "image_zoom": "lightbox",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
+        "padding_top": 24,
         "padding_bottom": 12
       }
     },
@@ -204,8 +250,8 @@
       "name": "Inspiration",
       "settings": {
         "heading": "Change the look of your house, change the perspective of others",
-        "margin_top_mobile": 40,
-        "margin_bottom_mobile": 40,
+        "margin_top_mobile": 14,
+        "margin_bottom_mobile": 94,
         "margin_top_desktop": 80,
         "margin_bottom_desktop": 80,
         "heading_size": "h_custom",
@@ -297,8 +343,8 @@
         "mobile_content_alignment": "left",
         "section_color_scheme": "",
         "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 64,
+        "padding_bottom": 100
       }
     },
     "single_image_NhpEx4": {
