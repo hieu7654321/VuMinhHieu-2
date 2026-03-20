@@ -13,16 +13,16 @@
       "type": "main-collection-banner",
       "settings": {
         "show_collection_description": true,
-        "show_collection_image": false,
+        "show_collection_image": true,
         "color_scheme": "scheme-1"
       }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "products_per_page": 16,
-        "columns_desktop": 3,
-        "columns_mobile": "1",
+        "products_per_page": 15,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
@@ -65,7 +65,8 @@
       "settings": {
         "image": "shopify://shop_images/Elevate-your-home.png",
         "image_overlay_opacity": 50,
-        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0"
+        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0",
+        "ci-height": "small"
       }
     },
     "service_features_jJRdmk": {
