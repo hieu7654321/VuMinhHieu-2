@@ -126,7 +126,7 @@
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 24,
-        "padding_bottom": 12
+        "padding_bottom": 64
       }
     },
     "related-products": {
@@ -193,8 +193,8 @@
         "mobile_content_alignment": "left",
         "section_color_scheme": "",
         "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 26,
+        "padding_bottom": 26
       }
     },
     "inspiration_image_zjeac3": {
@@ -250,10 +250,10 @@
       "name": "Inspiration",
       "settings": {
         "heading": "Change the look of your house, change the perspective of others",
-        "margin_top_mobile": 14,
+        "margin_top_mobile": 20,
         "margin_bottom_mobile": 94,
-        "margin_top_desktop": 80,
-        "margin_bottom_desktop": 80,
+        "margin_top_desktop": 102,
+        "margin_bottom_desktop": 84,
         "heading_size": "h_custom",
         "heading_alignment": "center",
         "title_size_mobile": 20,
@@ -263,7 +263,7 @@
         "text_size_mobile": 14,
         "text_line_mobile": 24,
         "text_size_desktop": 16,
-        "text_line_desktop": 26
+        "text_line_desktop": 24
       }
     },
     "single_image_Ka7WGV": {
@@ -320,7 +320,7 @@
         "text_TRAJbR": {
           "type": "text",
           "settings": {
-            "text": "<p>Escape to relaxation with this unique table retreat, designed for plush comfort. Sink into soft, luxurious seating that cradles your body, offering a perfect blend of style and coziness. Ideal for unwinding, reading, or enjoying a drink, this retreat provides an elegant and serene ambiance. Indulge in a sanctuary where you can relax and rejuvenate, experiencing comfort like never before. Embrace the ultimate retreat for<br/>your leisure moments, combining elegance with unmatched comfort.</p>",
+            "text": "<p>Escape to relaxation with this unique table retreat, designed for plush comfort. Sink into soft, luxurious seating that cradles your body, offering a perfect blend of style and coziness. Ideal for unwinding, reading, or enjoying a drink, this retreat provides an elegant and serene ambiance. Indulge in a sanctuary where you can relax and rejuvenate, experiencing comfort like never before. Embrace the ultimate retreat for your leisure moments, combining elegance with unmatched comfort.</p>",
             "text_style": "subtitle"
           }
         }
@@ -343,8 +343,8 @@
         "mobile_content_alignment": "left",
         "section_color_scheme": "",
         "color_scheme": "",
-        "padding_top": 64,
-        "padding_bottom": 100
+        "padding_top": 100,
+        "padding_bottom": 154
       }
     },
     "single_image_NhpEx4": {
