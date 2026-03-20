@@ -1589,17 +1589,17 @@ a.product__text {
 
 .product-media-container.constrain-height {
   /* arbitrary offset value based on average theme spacing and header height */
-  --viewport-offset: 400px;
+  --viewport-offset: 0px;
   --constrained-min-height: 480px;
   --constrained-height: max(var(--constrained-min-height), calc(100vh - var(--viewport-offset)));
   /* margin-right: auto;
   margin-left: auto; */
 }
 
-.product-media-container.constrain-height.media-fit-contain {
+/* .product-media-container.constrain-height.media-fit-contain {
   --contained-width: calc(var(--constrained-height) * var(--aspect-ratio));
   width: min(var(--contained-width), 100%);
-}
+} */
 
 .product-media-container .media {
   padding-top: var(--ratio-percent);
@@ -1636,7 +1636,7 @@ a.product__text {
   }
 
   .product-media-container.constrain-height {
-    --viewport-offset: 170px;
+    --viewport-offset: 0px;
     --constrained-min-height: 500px;
   }
 
