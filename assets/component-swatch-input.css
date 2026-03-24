@@ -3,9 +3,9 @@
   --swatch-input--border-radius: 50%;
   display: inline-block;
   max-width: 100%;
-  border-radius: var(--swatch-input--border-radius);
+  /* border-radius: var(--swatch-input--border-radius); */
   cursor: pointer;
-  outline-offset: 0.2rem;
+  outline-offset: 0.5rem;
   outline-color: transparent;
   outline-style: solid;
   transition-property: outline-color, outline-width, box-shadow;

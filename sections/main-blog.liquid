@@ -4,8 +4,9 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: {{ section.settings.padding_top | times: 0.46 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 1.8 | round: 0 }}px;
+    /* 40px */
   }
 
   @media screen and (min-width: 750px) {
@@ -16,12 +17,84 @@
   }
 {%- endstyle -%}
 
-{%- paginate blog.articles by 6 -%}
-  <div class="main-blog page-width section-{{ section.id }}-padding">
-    <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {{ blog.title | escape }}
-    </h1>
+<div class="main-blog__navigation">
+  <a href="{{ routes.root_url }}">Home</a>
+  <span class="svg-wrapper">
+    {{- 'icon-caret.svg' | inline_asset_content -}}
+  </span>
+  <a href="{{ blog.url }}">{{ blog.title | escape }}</a>
+</div>
+<h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} blog__title">
+  {{ blog.title | escape }}
+</h1>
 
+{% assign first_popular_shown = false %}
+{% for article in blog.articles %}
+  {% if article.tags contains 'popular' and first_popular_shown == false %}
+    <div class="article__trending">
+      {%- if section.settings.show_image == true and article.image -%}
+        <div class="article-card__image--pwrapper">
+          <div
+            class="article-card__image--promo">
+            {{
+              article.image
+              | image_url: width: 1410
+              | image_tag:
+                width: article.image.width,
+                height: article.image.height,
+                fetchpriority: 'high'
+            }}
+          </div>
+        </div>
+      {%- endif -%}
+      <div class="card__content--promo">
+        <div class="card__information--promo">
+          <div class="article-card__info--promo">
+            {%- if section.settings.show_date -%}
+              <span class="promo-date">{{ article.published_at | time_tag: format: 'date' }}</span>
+            {%- endif -%}
+            {%- if section.settings.show_author -%}
+              <span>{{ article.author }}</span>
+            {%- endif -%}
+          </div>
+          <h3 class="card__heading--promo h2">
+            <a href="{{ article.url }}" class="full-unstyled-link">
+              {{ article.title | truncate: 50 | escape }}
+            </a>
+          </h3>
+          <a href="{{ article.url }}" class="card__button--promo">Learn more
+          </a>
+          <div class="article-card__footer--promo">
+            {%- if article.comments_count > 0 and blog.comments_enabled? -%}
+              <span>{{ 'blogs.article.comments' | t: count: article.comments_count }}</span>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% assign first_popular_shown = true %}
+  {% endif %}
+{% endfor %}
+
+{% assign first_tag = false %}
+<div class="blog-tabs">
+  <a class="blog-tab-button {% if current_tags == blank %}is-active{% endif %}" href="{{ blog.url }}">
+    All Posts
+  </a>
+  {% for tag in blog.all_tags %}
+    {% if tag != 'popular' %}
+      <a class="blog-tab-button 
+        {% if current_tags contains tag %}is-active
+        {% elsif first_tag %}is-active{% assign first_tag = false %}{% endif %}" 
+         href="{{ blog.url }}/tagged/{{ tag | handle }}">
+        {{ tag }}
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{%- paginate blog.articles by 9 -%}
+  <div class="main-blog page-width section-{{ section.id }}-padding">
     <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
       {%- for article in blog.articles -%}
         <div
@@ -123,7 +196,7 @@
       "id": "padding_top",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 2,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
       "default": 36
@@ -133,7 +206,7 @@
       "id": "padding_bottom",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 2,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36

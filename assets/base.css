@@ -426,6 +426,16 @@ blockquote {
   letter-spacing: 0.16rem;
 }
 
+.caption-with-letter-spacing--custom_imgtxt {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: var(--color-foreground);
+}
+
 .caption-with-letter-spacing--large {
   font-size: 1.4rem;
   letter-spacing: 0.18rem;
@@ -571,6 +581,7 @@ hr {
   background-color: rgba(var(--color-foreground), 0.2);
   display: block;
   margin: 5rem 0;
+  width: 100%;
 }
 
 @media screen and (min-width: 750px) {
@@ -1033,9 +1044,23 @@ summary::-webkit-details-marker {
     max-width: calc(20% - var(--grid-desktop-horizontal-spacing) * 4 / 5);
   }
 
-  .grid--4-col-desktop .grid__item {
+  .grid--4-col-desktop.slider .grid__item {
     width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
     max-width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+  }
+
+  .grid--4-col-desktop:not(.slider) .grid__item {
+    width: calc(25% - var(--grid-desktop-horizontal-spacing) * 9 / 4);
+    max-width: calc(25% - var(--grid-desktop-horizontal-spacing) * 9 / 4);
+  }
+
+  .grid--4-col-desktop.main-collection-grid:not(.slider) .grid__item .responsive-ratio::before {
+    padding-bottom: clamp(234.66px, 27.7vw, 440px);
+  }
+
+  .grid--4-col-desktop:not(.slider) .grid__item:nth-child(6n+1),.grid--4-col-desktop:not(.slider) .grid__item:nth-child(6n+6) {
+    width: calc(50% - var(--grid-desktop-horizontal-spacing) * 3 / 2);
+    max-width: calc(50% - var(--grid-desktop-horizontal-spacing) * 3 / 2);
   }
 
   .grid--3-col-desktop .grid__item {
@@ -1095,11 +1120,11 @@ summary::-webkit-details-marker {
     margin-left: calc(-1 * var(--grid-mobile-horizontal-spacing));
   }
 
-  .grid--2-col-tablet-down .grid__item {
+  .grid--2-col-tablet-down:not(.main-collection-grid) .grid__item {
     width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
   }
 
-  .slider--tablet.grid--peek.grid--2-col-tablet-down .grid__item,
+  .slider--tablet.grid--peek.grid--2-col-tablet-down:not(.main-collection-grid) .grid__item,
   .grid--peek .grid__item {
     width: calc(150% - var(--grid-mobile-horizontal-spacing) - 3rem);
     max-width: clamp(265px, 50vw, 345px);
@@ -1121,7 +1146,7 @@ summary::-webkit-details-marker {
   }
 
   .slider--tablet.grid--peek.grid--2-col-tablet .grid__item,
-  .slider--tablet.grid--peek.grid--2-col-tablet-down .grid__item {
+  .slider--tablet.grid--peek.grid--2-col-tablet-down:not(.main-collection-grid) .grid__item {
     width: calc(50% - var(--grid-desktop-horizontal-spacing) - 3rem);
   }
 
@@ -1129,7 +1154,7 @@ summary::-webkit-details-marker {
     margin-left: 1.5rem;
   }
 
-  .grid--2-col-tablet-down .grid__item {
+  .grid--2-col-tablet-down:not(.main-collection-grid) .grid__item {
     width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
@@ -1824,8 +1849,8 @@ details[open] > .share-button__fallback {
 }
 
 .field__button > .svg-wrapper {
-  height: 1.3rem;
-  width: 0.7rem;
+  height: 1.6rem;
+  width: 1rem;
 }
 
 .field__input:-webkit-autofill ~ .field__button,
@@ -1921,7 +1946,7 @@ input[type='checkbox'] {
 .quantity {
   color: rgba(var(--color-foreground));
   position: relative;
-  width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
+  width: calc(12.1rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
   display: flex;
   border-radius: var(--inputs-radius);
   min-height: calc((var(--inputs-border-width) * 2) + 4.5rem);
@@ -2152,6 +2177,8 @@ input[type='checkbox'] {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: 'announcements';
+  padding-inline: 1.7rem;
+  max-width: none;
 }
 
 .utility-bar__grid .list-social {
@@ -2164,6 +2191,30 @@ input[type='checkbox'] {
 @media screen and (max-width: 989px) {
   .utility-bar .utility-bar__grid .list-social {
     display: none;
+  }
+
+  
+  .grid--2-col-tablet-down.main-collection-grid:not(.slider) .grid__item {
+    width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
+    max-width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
+  }
+
+  .grid--2-col-tablet-down.main-collection-grid:not(.slider) .grid__item:not(:nth-child(5n+1)) .responsive-ratio {
+    --ratio-percent: calc( 234.66 / 176 * 100%) !important;
+  }
+
+  /* .grid--2-col-tablet-down.main-collection-grid:not(.slider) .grid__item:nth-child(6n+1), .grid--2-col-tablet-down.main-collection-grid:not(.slider) .grid__item:nth-child(6n+6) {
+    width: 100%;
+    max-width: 100%;
+  } */
+
+  .grid--2-col-tablet-down.main-collection-grid:not(.slider) .grid__item:nth-child(5n+1){
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .grid--2-col-tablet-down.main-collection-grid:not(.slider) .grid__item:nth-child(5n+1) .responsive-ratio{
+    --ratio-percent: calc( 234.66 / 360 * 100%) !important;
   }
 }
 
@@ -2222,11 +2273,13 @@ input[type='checkbox'] {
 .announcement-bar .slider-button--next {
   margin-right: -1.7rem;
   /* min-width: 44px; */
+  max-width: 3.6rem
 }
 
 .announcement-bar .slider-button--prev {
   margin-left: -1.7rem;
   /* min-width: 44px; */
+  max-width: 3.6rem;
 }
 
 .announcement-bar .slider-button--next:focus-visible,
@@ -2254,8 +2307,8 @@ input[type='checkbox'] {
 
 @media screen and (min-width: 990px) {
   body:has(.section-header .header:not(.drawer-menu)) .utility-bar .page-width {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 1.9rem;
+    padding-right: 1.9rem;
   }
 
   .announcement-bar-slider {
@@ -2486,7 +2539,7 @@ input[type='checkbox'] {
 
 .header__heading-link {
   display: inline-block;
-  padding: 0.75rem;
+  /* padding: 0.75rem; */
   text-decoration: none;
   word-break: break-word;
 }
@@ -2557,7 +2610,8 @@ input[type='checkbox'] {
   display: flex;
   grid-area: icons;
   justify-self: end;
-  padding-right: 0.8rem;
+  /* padding-right: 0.8rem; */
+  gap: 1.6rem;
 }
 
 .header__icons .shopify-app-block {
@@ -2583,7 +2637,7 @@ input[type='checkbox'] {
 
 .header__icon .svg-wrapper {
   width: 44px;
-  height: 40px;
+  height: 34px;
 }
 
 .header__icon::after {
@@ -2604,14 +2658,14 @@ input[type='checkbox'] {
 
 .header__icon,
 .header__icon--cart .icon {
-  height: 4.4rem;
-  width: 4.4rem;
+  height: 2.4rem;
+  width: 2.4rem;
   padding: 0;
 }
 
 .header__icon--cart {
   position: relative;
-  margin-right: -1.2rem;
+  margin-right: 0.8rem;
 }
 
 .header__icon--menu[aria-expanded='true']::before {
@@ -2686,6 +2740,10 @@ menu-drawer + .header__search {
   .header--top-center * > .header__search {
     display: none;
   }
+
+  .header__icons {
+    gap: 2.4rem;
+  }
 }
 
 details[open] > .search-modal {
@@ -2711,7 +2769,7 @@ details[open] .modal-overlay::after {
   opacity: 0;
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
   min-height: calc(100% + var(--inputs-margin-offset) + (2 * var(--inputs-border-width)));
-  height: 100%;
+  height: 200%;
 }
 
 .search-modal__content {
@@ -2809,7 +2867,7 @@ details[open] > .header__submenu {
 
 /* Header menu */
 .header__inline-menu {
-  margin-left: -1.2rem;
+  /* margin-left: -1.2rem; */
   grid-area: navigation;
   display: none;
 }
@@ -2842,7 +2900,7 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item {
-  padding: 1.2rem;
+  padding: 0.5rem 0;
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
 }
@@ -2873,15 +2931,15 @@ details[open] > .header__menu-item .icon-caret {
 }
 
 .header__active-menu-item {
-  transition: text-decoration-thickness var(--duration-short) ease;
+  /* transition: text-decoration-thickness var(--duration-short) ease; */
   color: rgb(var(--color-foreground));
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  /* text-decoration: underline;
+  text-underline-offset: 0.3rem; */
 }
 
-.header__menu-item:hover .header__active-menu-item {
+/* .header__menu-item:hover .header__active-menu-item {
   text-decoration-thickness: 0.2rem;
-}
+} */
 
 .header__submenu {
   transition: opacity var(--duration-default) ease, transform var(--duration-default) ease;
@@ -2989,6 +3047,7 @@ details-disclosure > details {
   letter-spacing: 0;
   padding: 0.3rem 0.9rem !important;
   color: white;
+  background-color: #000;
 }
 
 .new-color {
@@ -2999,6 +3058,7 @@ details-disclosure > details {
   padding: 0.2rem 0 !important;
   color: white;
   max-width: 5rem;
+  background-color: #054E4A;
 }
 
 @media screen and (min-width: 990px) {

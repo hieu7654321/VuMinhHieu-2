@@ -17,20 +17,6 @@
   <div class="pagination-wrapper" data-page="{{ paginate.current_page }}">
     <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
       <ul class="pagination__list list-unstyled" role="list">
-        {%- if paginate.previous -%}
-          <li>
-            <a
-              href="{{ paginate.previous.url }}{{ anchor }}"
-              class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce"
-              aria-label="{{ 'general.pagination.previous' | t }}"
-            >
-              <span class="svg-wrapper">
-                {{- 'icon-caret.svg' | inline_asset_content -}}
-              </span>
-            </a>
-          </li>
-        {%- endif -%}
-
         {%- for part in paginate.parts -%}
           <li>
             {%- if part.is_link -%}
@@ -46,7 +32,7 @@
                 <a
                   role="link"
                   aria-disabled="true"
-                  class="pagination__item pagination__item--current light"
+                  class="pagination__item pagination__item--current"
                   aria-current="page"
                   aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
                 >
@@ -58,21 +44,37 @@
             {%- endif -%}
           </li>
         {%- endfor -%}
-
+      </ul>
+      <div class="navigation-btn">
+        {%- if paginate.previous -%}
+          <div class="pagination-arrow" style="margin-right: 12px;">
+            <a
+              href="{{ paginate.previous.url }}{{ anchor }}"
+              class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce"
+              aria-label="{{ 'general.pagination.previous' | t }}"
+            >
+              <span class="svg-wrapper">
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </span>
+              <span>Prev</span>
+            </a>
+          </div>
+        {%- endif -%}
         {%- if paginate.next -%}
-          <li>
+          <div class="pagination-arrow" style="margin-left: 12px;">
             <a
               href="{{ paginate.next.url }}{{ anchor }}"
               class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce"
               aria-label="{{ 'general.pagination.next' | t }}"
             >
+              <span>Next</span>
               <span class="svg-wrapper">
                 {{- 'icon-caret.svg' | inline_asset_content -}}
               </span>
             </a>
-          </li>
+          </div>
         {%- endif -%}
-      </ul>
+      </div>
     </nav>
   </div>
 {%- endif -%}

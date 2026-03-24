@@ -470,7 +470,8 @@
       "settings": {
         "image": "shopify://shop_images/Elevate-your-home.png",
         "image_overlay_opacity": 50,
-        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0"
+        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0",
+        "ci-height": "small"
       }
     },
     "service_features_DHB33g": {

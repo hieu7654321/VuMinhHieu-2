@@ -17,6 +17,15 @@
   width: 1.8rem;
 }
 
+.main-collection-grid .card__heading {
+  font-size: 16.5px;
+  margin-top: 0.8rem;
+}
+
+.main-collection-grid .card__information {
+  padding: 1.5rem 1rem 1.2rem 1rem;
+}
+
 @media screen and (max-width: 749px) {
   .collection .loading-overlay {
     top: 0;
@@ -114,7 +123,7 @@
 
 .collection-tabs {
   display: flex;
-  gap: 2.5rem;
+  gap: 2.8rem;
   margin: 3.5rem 0 2rem 1.5rem;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -135,6 +144,7 @@
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0;
+  font-family: var(--font-body-family);
 }
 
 .collection-tab-button.is-active {
@@ -157,7 +167,7 @@
 @media screen and (min-width: 990px) {
   .collection-tabs {
     margin: auto 0 auto auto;
-    gap: 3.6rem;
+    gap: 4.2rem;
   }
 
   .flex {
