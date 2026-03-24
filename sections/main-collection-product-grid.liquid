@@ -25,13 +25,26 @@
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.66 | round: 0 }}px;
   }
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    .collection-grid-{{ section.id }} {
+      column-gap: 8px;
+      row-gap: 8px;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .collection-grid-{{ section.id }} {
+      column-gap: 30px;
+      row-gap: 14px;
+      margin-bottom: 5rem;
     }
   }
 {%- endstyle -%}
@@ -150,6 +163,8 @@
                 grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
                 grid--{{ section.settings.columns_desktop }}-col-desktop
                 {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
+                main-collection-grid
+                collection-grid-{{ section.id }}
               "
             >
               {% assign skip_card_product_styles = false %}
@@ -165,6 +180,22 @@
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
+                  {% comment %} {% if section.settings.image_ratio == 'custom' %}
+                    {% assign media_index = forloop.index | modulo: 6 %}
+                    {% if product.media.first.width > product.media.first.height or product.media.first.width == product.media.first.height %}
+                      {% assign expected_ratio = 'adapt' %}
+                    {% elsif  product.media.first.width <> product.media.first.height  %}
+                      {% assign expected_ratio = 'portrait' %}
+                    {% endif %}
+                    {% if media_index == 0 or media_index == 1 %}
+                      {% assign expected_ratio = 'adapt' %}
+                    {% else  %}
+                      {% assign expected_ratio = 'portrait' %}
+                    {% endif %}
+                  {% else %}
+                    {% assign expected_ratio = section.settings.image_ratio %}
+                  {% endif %} {% endcomment %}
+                  {% assign media_index = forloop.index | modulo: 6 %}
                   {% render 'card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
@@ -175,7 +206,8 @@
                     lazy_load: lazy_load,
                     skip_styles: skip_card_product_styles,
                     quick_add: section.settings.quick_add,
-                    section_id: section.id
+                    section_id: section.id,
+                    media_index: media_index
                   %}
                 </li>
                 {%- assign skip_card_product_styles = true -%}
@@ -260,6 +292,10 @@
         {
           "value": "square",
           "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
+        },
+        {
+          "value": "custom",
+          "label": "Custom"
         }
       ],
       "default": "adapt",
@@ -390,7 +426,7 @@
       "id": "padding_top",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 2,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
       "default": 36
@@ -400,7 +436,7 @@
       "id": "padding_bottom",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 2,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36

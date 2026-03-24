@@ -17,6 +17,15 @@
   width: 1.8rem;
 }
 
+.main-collection-grid .card__heading {
+  font-size: 16.5px;
+  margin-top: 0.8rem;
+}
+
+.main-collection-grid .card__information {
+  padding: 1.5rem 1rem 1.2rem 1rem;
+}
+
 @media screen and (max-width: 749px) {
   .collection .loading-overlay {
     top: 0;

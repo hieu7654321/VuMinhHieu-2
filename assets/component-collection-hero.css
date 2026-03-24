@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
 }
 
 .collection-hero--with-image .collection-hero__inner {
@@ -58,7 +59,7 @@
 
 @media screen and (min-width: 750px) {
   .collection-hero {
-    padding: 0;
+    padding: 2.5rem;
   }
 
   .collection-hero__inner {
