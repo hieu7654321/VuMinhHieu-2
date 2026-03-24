@@ -14,6 +14,7 @@
       "blocks": {
         "vendor": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "{{ product.vendor }}",
             "text_style": "uppercase"
@@ -27,11 +28,15 @@
           "type": "price",
           "settings": {}
         },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "swatch_shape": "circle"
+            "swatch_shape": "square"
           }
         },
         "quantity_selector": {
@@ -41,13 +46,51 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
+        "icon_with_text_WAg4Rx": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "box",
+            "heading_1": "Orders over ${{ product.metafields.products_info.ship_free.value }} ship free",
+            "icon_2": "return",
+            "heading_2": "{{ product.metafields.products_info.day_returns.value }} day returns",
+            "icon_3": "none",
+            "heading_3": ""
+          }
+        },
+        "collapsible_tab_7WkGyT": {
+          "type": "collapsible_tab",
+          "name": "Material & Care",
+          "settings": {
+            "heading": "Material & Care",
+            "icon": "none",
+            "content": "<p>{{ product.metafields.products_info.material_and_care | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_YtL9cV": {
+          "type": "collapsible_tab",
+          "name": "Dimensions",
+          "settings": {
+            "heading": "Dimensions",
+            "icon": "none",
+            "content": "<p>{{ product.metafields.products_info.dimensions | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_aP3fct": {
+          "type": "collapsible_tab",
+          "name": "Shipping & Returns",
+          "settings": {
+            "heading": "Shipping & Returns",
+            "icon": "none",
+            "content": "<p>{{ product.metafields.products_info.shipping_and_returns | metafield_tag }}</p>",
+            "page": ""
+          }
         },
         "share": {
           "type": "share",
@@ -60,30 +103,35 @@
         "vendor",
         "title",
         "price",
+        "description",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
+        "icon_with_text_WAg4Rx",
+        "collapsible_tab_7WkGyT",
+        "collapsible_tab_YtL9cV",
+        "collapsible_tab_aP3fct",
         "share"
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-c01e3526-9186-4d40-ad68-c41f9ba9b2c8",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail_slider",
         "mobile_thumbnails": "hide",
         "media_position": "left",
         "image_zoom": "lightbox",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
+        "padding_top": 24,
+        "padding_bottom": 66
       }
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -99,10 +147,338 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "image_with_text_xPmpiF": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_wVgNJH": {
+          "type": "caption",
+          "name": "THE TIRED MAN",
+          "settings": {
+            "caption": "THE TIRED MAN",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "custom_imgtxt"
+          }
+        },
+        "heading_37nJGx": {
+          "type": "heading",
+          "settings": {
+            "heading": "Lets you sink into its plush and comforting embrace after a day.",
+            "heading_size": "h_custom"
+          }
+        },
+        "text_3wChWM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Considered one of Denmark’s greatest and most influential architects, Mogens Lassen pioneered Danish Functionalism, taking his cues from Bauhaus sensibilities. His interior designs are a natural continuation of his architectural approach and add energy and atmosphere to everyday living spaces and tasks. From decorative objects to larger furniture designs, his designs delicately balance presence without drawing undue attention, finding their natural place in any space.</p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "caption_wVgNJH",
+        "heading_37nJGx",
+        "text_3wChWM"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/imgtxt1.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 26,
+        "padding_bottom": 26
+      }
+    },
+    "inspiration_image_zjeac3": {
+      "type": "inspiration-image",
+      "blocks": {
+        "item_y69gYW": {
+          "type": "item",
+          "name": "Showroom",
+          "settings": {
+            "image": "shopify://shop_images/Showroom.png",
+            "aspect": "portrait",
+            "title": "Showroom",
+            "text": "Experience design for living at our\nflagship showroom located in Boston’s South End."
+          }
+        },
+        "item_UB7M7f": {
+          "type": "item",
+          "name": "Interior work",
+          "settings": {
+            "image": "shopify://shop_images/Interior_work.png",
+            "aspect": "landscape",
+            "title": "Interior work",
+            "text": "Crafting spaces through meticulous planning, material selection, and creative execution, enhancing aesthetics and functionality."
+          }
+        },
+        "item_btwAGL": {
+          "type": "item",
+          "name": "Authentic design",
+          "settings": {
+            "image": "shopify://shop_images/Authentic_Design.jpg",
+            "aspect": "portrait",
+            "title": "Authentic design",
+            "text": "We only carry designs we believe in ethically and aesthetically – original, authentic pieces that are made to last."
+          }
+        },
+        "item_YNUTpb": {
+          "type": "item",
+          "name": "Custom additions",
+          "settings": {
+            "image": "shopify://shop_images/Custom_additions.png",
+            "aspect": "landscape",
+            "title": "Custom additions",
+            "text": "Tailoring unique elements to spaces, elevating interiors with personalized craftsmanship and design solutions."
+          }
+        }
+      },
+      "block_order": [
+        "item_y69gYW",
+        "item_UB7M7f",
+        "item_btwAGL",
+        "item_YNUTpb"
+      ],
+      "name": "Inspiration",
+      "settings": {
+        "heading": "Change the look of your house, change the perspective of others",
+        "margin_top_mobile": 20,
+        "margin_bottom_mobile": 94,
+        "margin_top_desktop": 102,
+        "margin_bottom_desktop": 84,
+        "heading_size": "h_custom",
+        "heading_alignment": "center",
+        "title_size_mobile": 20,
+        "title_line_mobile": 30,
+        "title_size_desktop": 24,
+        "title_line_desktop": 38,
+        "text_size_mobile": 14,
+        "text_line_mobile": 24,
+        "text_size_desktop": 16,
+        "text_line_desktop": 24
+      }
+    },
+    "single_image_Ka7WGV": {
+      "type": "single-image",
+      "blocks": {
+        "heading_pgYypQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Designed by Flemming Lassen",
+            "heading_size": "product-banner"
+          }
+        },
+        "text_HX6kQN": {
+          "type": "text",
+          "settings": {
+            "text": "A timeless icon, the mid-century armchair, The Tired Man, lets you sink into its plush and comforting embrace after a long day.",
+            "text_style": "body",
+            "banner__text--fs": 15,
+            "banner__text--lh": 24
+          }
+        }
+      },
+      "block_order": [
+        "heading_pgYypQ",
+        "text_HX6kQN"
+      ],
+      "name": "Custom Banner",
+      "settings": {
+        "image": "shopify://shop_images/Product-Banner.webp",
+        "image_overlay_opacity": 0,
+        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0",
+        "ci-height": "high"
+      }
+    },
+    "image_with_text_4PA9Jr": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_gGHNfx": {
+          "type": "caption",
+          "name": "THE TIRED MAN",
+          "settings": {
+            "caption": "THE TIRED MAN",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "custom_imgtxt"
+          }
+        },
+        "heading_UpcWEr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Unwind in plush comfort with this unique table retreat.",
+            "heading_size": "h_custom"
+          }
+        },
+        "text_TRAJbR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Escape to relaxation with this unique table retreat, designed for plush comfort. Sink into soft, luxurious seating that cradles your body, offering a perfect blend of style and coziness. Ideal for unwinding, reading, or enjoying a drink, this retreat provides an elegant and serene ambiance. Indulge in a sanctuary where you can relax and rejuvenate, experiencing comfort like never before. Embrace the ultimate retreat for your leisure moments, combining elegance with unmatched comfort.</p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "caption_gGHNfx",
+        "heading_UpcWEr",
+        "text_TRAJbR"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/imgtxt2.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 100,
+        "padding_bottom": 154
+      }
+    },
+    "single_image_NhpEx4": {
+      "type": "single-image",
+      "blocks": {
+        "heading_7VAQXt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Elevate Your Home",
+            "heading_size": "hsingle-banner"
+          }
+        },
+        "text_TUENTR": {
+          "type": "text",
+          "settings": {
+            "text": "Clever products for every corner",
+            "text_style": "body",
+            "banner__text--fs": 16,
+            "banner__text--lh": 24
+          }
+        }
+      },
+      "block_order": [
+        "heading_7VAQXt",
+        "text_TUENTR"
+      ],
+      "name": "Custom Banner",
+      "settings": {
+        "image": "shopify://shop_images/Elevate-your-home.png",
+        "image_overlay_opacity": 50,
+        "color_scheme": "scheme-e8d51dd3-f783-41b7-ba6e-b68845ab60b0",
+        "ci-height": "small"
+      }
+    },
+    "service_features_dKfrdT": {
+      "type": "service-features",
+      "blocks": {
+        "service_qaWPFc": {
+          "type": "service",
+          "name": "Free & fast delivery",
+          "settings": {
+            "icon": "shopify://shop_images/Free_and_Fast_delivery.png",
+            "heading": "Free & fast delivery",
+            "text": "We offer free shipping with ground delivery to the lower 48 states."
+          }
+        },
+        "service_gN6Nxk": {
+          "type": "service",
+          "name": "Online support",
+          "settings": {
+            "icon": "shopify://shop_images/Online_Support.png",
+            "heading": "Online support",
+            "text": "Online Support24 hours a day,<br>\n7 days a week"
+          }
+        },
+        "service_APiNPK": {
+          "type": "service",
+          "name": "30 Days return",
+          "settings": {
+            "icon": "shopify://shop_images/30_Days_Return.png",
+            "heading": "30 Days return",
+            "text": "Exchange or return items free of charge within 30 days"
+          }
+        },
+        "service_QHPjqE": {
+          "type": "service",
+          "name": "Flexible payment",
+          "settings": {
+            "icon": "shopify://shop_images/Payment.png",
+            "heading": "Flexible payment",
+            "text": "Pay conveniently using multiple credit cards for added flexibility."
+          }
+        }
+      },
+      "block_order": [
+        "service_qaWPFc",
+        "service_gN6Nxk",
+        "service_APiNPK",
+        "service_QHPjqE"
+      ],
+      "name": "Service Features",
+      "settings": {
+        "margin_mobile": 47,
+        "margin_desktop": 80,
+        "gap_mobile": 24,
+        "gap_desktop": 10,
+        "item_gap_mobile": 16,
+        "icon_size_mobile": 40,
+        "icon_size_desktop": 72,
+        "item_width": 33,
+        "heading_size_mobile": 20,
+        "heading_line_mobile": 26,
+        "heading_size_desktop": 20,
+        "heading_line_desktop": 32,
+        "text_size_mobile": 14,
+        "text_line_mobile": 24,
+        "text_size_desktop": 16,
+        "text_line_desktop": 24
+      }
+    },
+    "contact_shop_HTkmiE": {
+      "type": "contact-shop",
+      "name": "Layered Image Promo",
+      "settings": {
+        "color_scheme": "scheme-c66bb956-1d7e-4084-b78f-44bd0ed2891e",
+        "section_spacing_mobile": 30,
+        "section_spacing_desktop": 246,
+        "top_img1": "shopify://shop_images/Layered_Image_table.png",
+        "top_img2": "shopify://shop_images/Layer_Image_Chair.png",
+        "top_img3": "shopify://shop_images/Layer_Image_Accessories.png",
+        "bottom_img1": "shopify://shop_images/Layer_Image_Sitting.png",
+        "bottom_img2": "shopify://shop_images/Layer_Image_Decor.png",
+        "label": "renovate your home at",
+        "heading": "78 Trung Kinh, Yen Hoa, Cau Giay, Hanoi",
+        "heading_size_mobile": 32,
+        "heading_line_mobile": 56,
+        "heading_size_desktop": 32,
+        "heading_line_desktop": 56,
+        "label_size": 16,
+        "link_size": 16,
+        "link_text": "@ORANGY",
+        "link_url": "https://www.wgentech.com/"
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "image_with_text_xPmpiF",
+    "inspiration_image_zjeac3",
+    "single_image_Ka7WGV",
+    "image_with_text_4PA9Jr",
+    "single_image_NhpEx4",
+    "service_features_dKfrdT",
+    "contact_shop_HTkmiE"
   ]
 }
